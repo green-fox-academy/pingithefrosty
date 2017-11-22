@@ -1,3 +1,3 @@
-[I'm an inline-style link with title](https://github.com/pingithefrosty/hello-world "hello world")
-[I'm an inline-style link with title](https://github.com/pingithefrosty/patchwork "patchwork")
-[I'm an inline-style link with title](https://github.com/pingithefrosty/git-lesson-repository "git lesson repository")
+[hello world](https://github.com/pingithefrosty/hello-world "hello world")
+[patchwork](https://github.com/pingithefrosty/patchwork "patchwork")
+[git lesson repository](https://github.com/pingithefrosty/git-lesson-repository "git lesson repository")

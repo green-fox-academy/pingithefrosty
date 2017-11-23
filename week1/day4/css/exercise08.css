@@ -1,0 +1,33 @@
+.large{
+    height: 100px;
+    width: 728px;
+    border: 2px solid #4285F4;
+    background: white;
+    }
+
+.small{
+    height: 50px;
+    width: 50px;
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    background: #4285F4;
+    position: relative;
+    margin: 25px 8px;
+}
+
+.small:first-child{
+    margin-left: 24px;
+}
+
+.small:last-child{
+    margin-right: 24px;
+}
+
+#second{
+    background: #FF6347;
+}
+
+#second div{
+    background: #643579;
+}

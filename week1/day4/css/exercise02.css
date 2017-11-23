@@ -1,0 +1,38 @@
+div{
+    display: block;
+    width: 350px;
+    height: 133px;
+    font-size: 36px;
+    color: white;
+    font-family: "helvetica";
+    text-align: center;
+    line-height: 133px;
+}
+
+
+
+div:nth-child(1){
+    background: #E67676;
+    border-left: 15px solid #4285F4;
+    border-right: 15px solid #4285F4;
+    border-top: 15px solid #4285F4;
+}
+
+div:nth-child(2){
+    background: #F2F062;
+    border-left: 15px solid #4285F4;
+    border-right: 15px solid #4285F4;
+}
+
+div:nth-child(3){
+    background: #A9E6E6;
+    border-left: 15px solid #4285F4;
+    border-right: 15px solid #4285F4;
+}
+
+div:nth-child(4){
+    background: #7692E4;
+    border-left: 15px solid #4285F4;
+    border-right: 15px solid #4285F4;
+    border-bottom: 15px solid #4285F4;
+}

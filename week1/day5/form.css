@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: helvetica;
+}
+
+form{
+    width: 624px;
+    height: 920px;
+    background: #DCD6CD;
+    position: relative;
+    margin: auto;
+}
+
+div.base{
+    background: #DCD6CD;
+    border: 13px solid #DCD6CD;
+}
+
+div{
+    border-radius: 5px;
+}
+
+.base#first{
+    width: 100%;
+    height: 61px;
+    margin-top: 11px;
+    font-size: 30px;
+}
+
+.base#second{
+    width: 50%;
+    height: 460px;
+    float: left;
+    margin-bottom: 17px;
+}
+
+.base#third{
+    width: 50%;
+    height: 460px;
+    float: right;
+    margin-bottom: 17px;
+}
+
+.base#fourth{
+    width: 100%;
+    height: 184px;
+    margin-top: 17px;
+    clear: both;
+}
+
+.base#fifth{
+    width: 100%;
+    height: 174px;
+    margin-top: 17px;
+    clear: both;
+}
+
+select,
+input{
+    width: 100%;
+    height: 100%;
+    padding-left: 10px;
+    border: 1px solid #938C97;
+    border-radius: 5px;
+}
+
+#adatok,
+#kapcs{
+    padding-left: 10px;
+}
+
+#felt input,
+#nem input,
+#markajobb input,
+#markabal input{
+    width: 1.2em;
+    height: 1.2em;
+    background: white;
+    
+}
+
+#tobbet{
+    color: #9F9C98;
+}
+
+#szul input{
+    width: 50%;
+}
+
+#nem input{
+    margin-left: 10px;
+}
+
+#adatok,
+.field#nem,
+#kapcs{
+    line-height: 44px;
+}
+
+#ment input{
+    background: #4B4363;
+    color: #DCD6CD;
+}
+
+#torl input,
+#cv input{
+    color: #4B4363;
+}
+
+#ment input,
+#torl input,
+#cv input{
+    padding: 0px;
+}
+
+.desc{
+    font-weight: bold;
+}
+
+.desc,
+.field{
+    border: 2px solid #DCD6CD;
+}
+
+.desc{
+    height: 22px;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+#markabal input,
+#markajobb input{
+    margin-top: 8px;
+    margin-bottom: 2px;
+}
+
+.field{
+    height: 44px;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+#markabal,
+#szul{
+    width: 50%;
+    float: left;  
+}
+
+#markajobb,
+#nem{
+    width: 50%;
+    float: right;
+}
+
+#markabal,
+#markajobb{
+    height: 170px;
+}
+
+#cv,
+#ment{
+    width: 33%;
+    float: left;
+}
+
+#torl{
+    width: 33%;
+    float: right;
+}
+
+.field#cv,
+#felt,
+#marka,
+#tobbet{
+    clear: both;
+}
+
+.field#bem{
+    height: 132px;
+}
+
+#kapcs,
+#adatok{
+    background: #938C97;
+    color: white;
+    font-size: 22px;
+}
+
+#bem textarea{
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #938C97;
+}
+
+#felt input{
+    margin-right: 8px;
+}
+
+a{
+    color: #626262;
+}
+

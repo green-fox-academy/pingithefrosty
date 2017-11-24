@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form practice</title>
+    <link rel="stylesheet" href="form.css">  
+</head>
+<body>
+    <form>
+        <div class="base" id="first">Profil</div>
+        <div class="base" id="second">
+            <div class="field" id="adatok">Személyes Adatok</div>
+            <div class="desc" id="nev">Név *</div>
+            <div class="field" id="nev">
+                <input type="text" required name="Név">
+            </div>   
+            <div class="desc" id="szul">Születési év</div>
+            <div class="desc" id="nem">Nem</div>
+            <div class="field" id="szul">
+                <input type="text" placeholder="pl. 1984" name="szul">
+            </div>
+            <div class="field" id="nem">
+                <input type="radio" name="nem" value="nő"> nő
+                <input type="radio" name="nem" value="férfi"> férfi
+            </div>
+            <div class="desc" id="marka">Melyek a kedvenceid?</div>
+            <div class="field" id="markabal">
+                <input type="checkbox" value="pingvin"> pingvin<br>
+                <input type="checkbox" value="ámbráscet"> ámbráscet<br>
+                <input type="checkbox" value="elefánt"> elefánt<br>
+                <input type="checkbox" value="macska"> macska<br>
+                <input type="checkbox" value="tigris"> tigris<br>
+                <input type="checkbox" value="lepke"> lepke<br>
+            </div>
+            <div class="field" id="markajobb">
+                <input type="checkbox" name="animal" value="szurikáta"> szurikáta<br>
+                <input type="checkbox" value="zsiráf"> zsiráf<br>
+                <input type="checkbox" value="lajhár"> lajhár<br>
+                <input type="checkbox" value="csimpánz"> csimpánz<br>
+                <input type="checkbox" value="sas"> sas<br>
+                <input type="checkbox" value="gólya"> gólya<br>
+            </div>
+            <div class="desc" id="tobbet">Többet is választhatsz!</div>
+        </div>
+        <div class="base" id="third"> 
+            <div class="field" id="kapcs">Kapcsolat</div>
+            <div class="desc" id="tel">Telefonszám *</div>
+            <div class="field" id="tel">
+                <input type="text" placeholder="+36 -- --- ----" required name="Telefonszám">
+            </div>
+            <div class="desc" id="email">E-mail *</div>
+            <div class="field" id="email">
+                <input type="email" placeholder="nev@domain.hu" required name="E-mail">
+            </div>
+            <div class="desc" id="fb">Facebook profil</div>
+            <div class="field" id="fb">
+                <input type="text" placeholder="http://facebook.com/.." name="Facebook profil">
+            </div>
+            <div class="desc" id="twitter">Twitter</div>
+            <div class="field" id="twitter">
+                <input type="text" placeholder="http://twitter.com/.." name="Twitter">
+            </div>
+            <div class="desc" id="haz">Miben kódolsz?</div>
+            <div class="field" id="haz">
+                <select name="haz">
+                    <option value="Válassz nyelvet!" disabled selected>Válassz nyelvet!</option>
+                    <option value="volvo">Java</option>
+                    <option value="saab">Python</option>
+                    <option value="fiat">C#</option>
+                    <option value="audi">Ruby</option>
+                </select>
+            </div>
+        </div>
+        <div class="base" id="fourth">
+            <div class="desc" id="bem">Bemutatkozás *</div>
+            <div class="field" id="bem">
+                <textarea name="bem" required placeholder="Írj magadról pár mondatot!" rows="7"></textarea>
+            </div>
+        </div>
+        <div class="base" id="fifth">
+            <div class="desc" id="cv">CV feltöltése</div>
+            <div class="field" id="cv">
+                <input type="button" onclick="alert(kiválasztva)" value="FILE KIVÁLASZTÁSA">
+            </div>
+            <div class="desc" id="felt">
+                <input type="checkbox" name="felt" required value="elfogadva">Elfogadom a <a href="https://www.w3schools.com/html/">felhasználási feltételeket</a>
+            </div>
+            <div class="field" id="ment">
+                <input type="submit" value="MENTÉS">
+            </div>
+            <div class="field" id="torl">
+                <form>
+                    <input type="button" onClick="window.location.reload()" value="ŰRLAP TÖRLÉSE">
+                </form>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

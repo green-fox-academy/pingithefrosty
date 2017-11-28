@@ -2,8 +2,11 @@ public class Main {
 
     public static void main(String[] args) {
         String al = "Greenfox";
+        greet(al);
     }
-    public static String greet(){
+    public static void greet(String al){
+        System.out.print("Greeting dear, " + al);
+    }
 //  From now on, create the usual class wrapper
 //  and main method on your own.
 
@@ -12,5 +15,5 @@ public class Main {
 //     - Greeting is printing e.g. `Greetings dear, Greenfox`
 // - Greet `al`
 
-    }
+
 }

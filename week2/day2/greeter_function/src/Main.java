@@ -1,6 +1,9 @@
 public class Main {
 
     public static void main(String[] args) {
+        String al = "Greenfox";
+    }
+    public static String greet(){
 //  From now on, create the usual class wrapper
 //  and main method on your own.
 
@@ -8,6 +11,6 @@ public class Main {
 // - Create a function called `greet` that greets it's input parameter
 //     - Greeting is printing e.g. `Greetings dear, Greenfox`
 // - Greet `al`
-        
+
     }
 }

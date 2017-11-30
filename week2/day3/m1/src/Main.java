@@ -3,7 +3,6 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        String out = "";
         int[] notSoCrypticMessage = {1, 12, 1, 2, 11, 1, 7, 11, 1, 49, 1, 3, 11, 1, 50, 11};
         Map<Integer, String> map = new HashMap<>();
         map.put(7, "run around and desert you");
@@ -14,11 +13,6 @@ public class Main {
         map.put(1, "Never gonna");
         map.put(11, "\n");
         map.put(3, "say goodbye");
-
-        // Things are a little bit messed up
-        // Your job is to decode the notSoCrypticMessage by using the hashmap as a look up table
-        // Assemble the fragments into the out variable
-            // do something
         for (int i = 0; i < notSoCrypticMessage.length; i++){
             System.out.println(map.get(notSoCrypticMessage[i]));
         }

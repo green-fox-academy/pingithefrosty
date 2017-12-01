@@ -1,15 +1,24 @@
-public class Main {
+import java.util.*;
 
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.println(scanner());
+    }
+    private static String scanner() {
+        Scanner asd = new Scanner(System.in);
+        String inputstring = asd.nextLine();
+        ArrayList<String> array = new ArrayList<>();
+        String inputarray = asd.nextLine();
+        String[] parts = inputarray.split(" ");
+        for (int i = 0; i < parts.length; i++) {
+            array.add(parts[i]);
+        }
+        String result = "-1";
+        for (int j = 0; j < array.size(); j++) {
+            if (array.get(j).contains(inputstring)) {
+                result = String.valueOf(j);
+            }
+        }
+        return result;
     }
 }
-/*
-Create a function that takes a string and a list of string as a parameter
-Returns the index of the string in the list where the first string is part of
-Returns -1 if the string is not part any of the strings in the list
-
-
-input: "ching", ["this", "is", "what", "I'm", "searching", "in"]
-output: 4
- */

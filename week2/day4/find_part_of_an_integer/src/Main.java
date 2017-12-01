@@ -3,10 +3,10 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner asd = new Scanner(System.in);
-        ArrayList<String> input = new ArrayList<>();
-        ArrayList<String> result = new ArrayList<>();
-        String userinput = asd.nextLine();
-        String userinput2 = asd.nextLine();
+        ArrayList<Integer> input = new ArrayList<>();
+        ArrayList<Integer> result = new ArrayList<>();
+        int userinput = asd.nextLine();
+        int userinput2 = asd.nextLine();
         String[] parts = userinput.split(" ");
         for (int i = 0; i < parts.length; i++) {
             input.add(parts[i]);

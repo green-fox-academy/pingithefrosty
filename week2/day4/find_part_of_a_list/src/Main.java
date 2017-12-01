@@ -1,7 +1,23 @@
-public class Main {
+import java.util.*;
 
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Scanner asd = new Scanner(System.in);
+        ArrayList<String> input = new ArrayList<>();
+        ArrayList<String> result = new ArrayList<>();
+        String userinput = asd.nextLine();
+        String userinput2 = asd.nextLine();
+        String[] parts = userinput.split(" ");
+        for (int i = 0; i < parts.length; i++) {
+            input.add(parts[i]);
+        }
+        for (int j = 0; j < input.size(); j++) {
+            if (input.get(j).contains(userinput2)){
+                result.add(String.valueOf(j));
+            }
+        }
+        System.out.println(input);
+        System.out.println(result);
     }
 }
 

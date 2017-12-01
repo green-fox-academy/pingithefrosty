@@ -1,12 +1,20 @@
-public class Main {
+import java.util.*;
 
+public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
-        
+        Scanner asd = new Scanner(System.in);
+        ArrayList<String> input = new ArrayList<>();
+        int index = 0;
+        String string1 = asd.nextLine();
+        String string2 = asd.nextLine();
+        input.add(string1);
+        input.add(string2);
+        if (string1.contains(string2)){
+            index = string1.indexOf(string2);
+            System.out.println(index);
+        } else {
+            index = -1;
+            System.out.println(index);
+        }
     }
 }
-/*
-Create a function that takes two strings as a parameter
-Returns the starting index where the second one is starting in the first one
-Returns -1 if the second string is not in the first one
- */

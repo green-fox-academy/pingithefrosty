@@ -5,13 +5,12 @@ import java.util.List;
 
 public class PrintEachLine {
   public static void main(String[] args) {
-    List<String> lines = null;
     try {
       Path filePath = Paths.get("my-file.txt");
-      lines = Files.readAllLines(filePath);
+      List<String > lines = Files.readAllLines(filePath);
+      System.out.println(lines);
     } catch (Exception e) {
       System.out.println("Unable to read file: my-file.txt");
     }
-    System.out.println(lines);
   }
 }

@@ -11,8 +11,6 @@ public class Main {
     }
 
     private static int largestPowerOfTwo(int n) {
-            if((n & n-1) == 0){
-            }
             while((n & n-1) != 0){
                 n = n & n-1;
             }

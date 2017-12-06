@@ -2,15 +2,14 @@ import javax.swing.*;
 import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class PositionSquare {
+public class CenterBoxFunction {
   public static void mainDraw(Graphics graphics) {
-    squareDrawer(graphics, 30,30);
-    squareDrawer(graphics, 100,30);
-    squareDrawer(graphics, 30,100);
+    squareDrawer(graphics, 30);
+    squareDrawer(graphics, 100);
+    squareDrawer(graphics, 200);
   }
-
-  private static void squareDrawer(Graphics g, int x, int y) {
-    g.drawRect(x,y,50,50);
+  private static void squareDrawer(Graphics g, int x) {
+    g.drawRect((WIDTH-x)/2,(HEIGHT-x)/2,x,x);
   }
 
   static int WIDTH = 320;

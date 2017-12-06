@@ -7,21 +7,11 @@ public class LinePlay {
     for (int i = 0; i < WIDTH / 20; i++) {
       int x = i * 20;
       int y = 0;
-      lineDrawer(graphics, x, y);
-      x = 320;
-      y = i * 20;
-      lineDrawer(graphics, x, y);
-      x = i * 20;
-      y = 320;
-      lineDrawer(graphics, x, y);
-      x = 0;
-      y = i * 20;
-      lineDrawer(graphics, x, y);
+      graphics.setColor(Color.pink);
+      graphics.drawLine(i * 20,0,WIDTH,i *20);
+      graphics.setColor(Color.green);
+      graphics.drawLine(0,i * 20,i * 20,WIDTH);
     }
-  }
-
-  private static void lineDrawer(Graphics g, int x, int y) {
-    g.drawLine(x,y,WIDTH/2,HEIGHT/2);
   }
 
   static int WIDTH = 320;

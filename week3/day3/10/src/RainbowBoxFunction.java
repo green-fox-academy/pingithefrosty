@@ -4,9 +4,9 @@ import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class RainbowBoxFunction {
   public static void mainDraw(Graphics graphics) {
-    int r = (int)(Math.random()*255);
-    int g = (int)(Math.random()*255);
-    int b = (int)(Math.random()*255);
+    int r = 0;
+    int g = 0;
+    int b = 0;
     int x = WIDTH;
     while (x > 0) {
       r = (int)(Math.random()*255);

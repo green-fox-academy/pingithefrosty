@@ -2,12 +2,12 @@ import javax.swing.*;
 import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Diagonals {
-  public static void mainDraw(Graphics graphics){
+public class CenteredSquare {
+  public static void mainDraw(Graphics graphics) {
     graphics.setColor(Color.green);
-    graphics.drawLine(0,0,320,343);
-    graphics.drawLine(0,343,320,0);
+    graphics.drawRect(WIDTH / 2 - 5, HEIGHT / 2 - 5, 10, 10);
   }
+
   static int WIDTH = 320;
   static int HEIGHT = 343;
   public static void main(String[] args) {

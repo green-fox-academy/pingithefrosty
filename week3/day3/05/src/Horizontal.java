@@ -2,12 +2,17 @@ import javax.swing.*;
 import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Diagonals {
+public class Horizontal {
   public static void mainDraw(Graphics graphics){
-    graphics.setColor(Color.green);
-    graphics.drawLine(0,0,320,343);
-    graphics.drawLine(0,343,320,0);
+    lineDrawer(graphics, 30, 60);
+    lineDrawer(graphics, 40, 70);
+    lineDrawer(graphics, 50, 80);
   }
+
+  private static void lineDrawer(Graphics g, int x, int y) {
+    g.drawLine(x,y,x+50,y);
+  }
+
   static int WIDTH = 320;
   static int HEIGHT = 343;
   public static void main(String[] args) {

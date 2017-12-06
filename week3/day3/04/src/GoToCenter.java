@@ -1,12 +1,21 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.Scanner;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Diagonals {
+public class GoToCenter {
   public static void mainDraw(Graphics graphics){
-    graphics.setColor(Color.green);
-    graphics.drawLine(0,0,320,343);
-    graphics.drawLine(0,343,320,0);
+    Scanner scanner = new Scanner(System.in);
+    int input1x = scanner.nextInt();
+    int input1y = scanner.nextInt();
+    int input2x = scanner.nextInt();
+    int input2y = scanner.nextInt();
+    int input3x = scanner.nextInt();
+    int input3y = scanner.nextInt();
+    graphics.setColor(Color.black);
+    graphics.drawLine(input1x,input1y,WIDTH/2,HEIGHT/2);
+    graphics.drawLine(input2x,input2y,WIDTH/2,HEIGHT/2);
+    graphics.drawLine(input3x,input3y,WIDTH/2,HEIGHT/2);
   }
   static int WIDTH = 320;
   static int HEIGHT = 343;

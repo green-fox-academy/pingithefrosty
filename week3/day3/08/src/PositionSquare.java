@@ -2,12 +2,18 @@ import javax.swing.*;
 import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class Diagonals {
-  public static void mainDraw(Graphics graphics){
+public class FourRectangles {
+  public static void mainDraw(Graphics graphics) {
     graphics.setColor(Color.green);
-    graphics.drawLine(0,0,320,343);
-    graphics.drawLine(0,343,320,0);
+    graphics.drawRect(30, 30, 50, 60);
+    graphics.setColor(Color.blue);
+    graphics.drawRect(30, 100, 60, 70);
+    graphics.setColor(Color.black);
+    graphics.drawRect(100, 30, 30, 50);
+    graphics.setColor(Color.red);
+    graphics.drawRect(100, 100, 200, 150);
   }
+
   static int WIDTH = 320;
   static int HEIGHT = 343;
   public static void main(String[] args) {

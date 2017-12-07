@@ -1,19 +1,15 @@
 public class Bunny1 {
   public static void main(String[] args) {
-    int n = 10;
-    System.out.println(sumRec(n));
+    int n = 3333;
+    System.out.println(bunnyN(n));
   }
 
-  private static int sumRec(int n) {
-    if (n / 10 < 1) {
-      return n;
+  private static int bunnyN(int n) {
+    if (n == 0) {
+      return 0;
     } else {
-      return sumRec(n / 10) + n % 10;
+      return bunnyN(n-1) + 2;
     }
   }
 }
-
-// We have a number of bunnies and each bunny has two big floppy ears.
-// We want to compute the total number of ears across all the bunnies recursively
-// (without loops or multiplication).
 

@@ -3,16 +3,15 @@ import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class Triangles {
-
   public static void mainDraw(Graphics graphics){
 
 
-  triangle(graphics,3,320,310);
+  triangle(graphics);
 
   }
 
-  private static void triangle(Graphics g, int x, int y, int size) {
-    g.drawLine(x,y,x,y+size);
+  private static void triangle(Graphics g) {
+    g.drawPolygon(new int[] {50, 75, 100}, new int[] {100, 20, 100}, 3);;
   }
 
   static int WIDTH = 320;

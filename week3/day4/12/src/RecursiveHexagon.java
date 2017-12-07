@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class RecursionSquare {
+public class RecursiveHexagon {
   public static void mainDraw(Graphics graphics) {
     graphics.setColor(Color.yellow);
     graphics.fillRect(0, 0, WIDTH, HEIGHT);

@@ -9,20 +9,14 @@ public class Triangles {
     int y = 610;
     tri(graphics, x, y, 1);
     revtrihalf(graphics, x, y, 1);
-    fract(graphics,x,y,1,5);
+    fract(graphics,x,y,1,7);
   }
-
   private static void tri(Graphics g, int x, int y, int s) {
-    g.drawLine(x, y, x + 600 / s, y);
-    g.drawLine(x, y, x + 300 / s, y - 520 / s);
-    g.drawLine(x + 600 / s, y, x + 300 / s, y - 520 / s);
+    g.drawPolygon(new int[] {x, x + 600 / s, x + 300 / s}, new int[] {y, y, y - 520 / s}, 3);
   }
   private static void revtrihalf(Graphics g, int x, int y, int s) {
-    g.drawLine(x+300/s,y,x+150/s,y-260/s);
-    g.drawLine(x+300/s,y,x+450/s,y-260/s);
-    g.drawLine(x+450/s,y-260/s,x+150/s,y-260/s);
+    g.drawPolygon(new int[] {x + 300 / s, x + 450 / s, x + 150 / s}, new int[] {y, y - 260 / s, y - 260 / s}, 3);
   }
-
   private static void fract(Graphics g, int x, int y, int s, int n) {
     if (n == 0) {
       return;

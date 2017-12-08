@@ -10,7 +10,7 @@ public class Bunny2 {
     } else if (n % 2 == 0){
       return powerN(n-1) + 3;
     } else {
-      return powerN(n-1) + 2;
+      return powerN(n-1+powerN(n)) + 2;
     }
   }
 }

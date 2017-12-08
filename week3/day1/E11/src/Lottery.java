@@ -16,7 +16,7 @@ public class Lottery {
       for (int i = 0; i < original.size() ; i++) {
         String str = original.get(i);
         for (int k = 11; k < 15; k++) {
-          String result = str.substring(ordinalIndexOf(str, ";", k) + 1, ordinalIndexOf(str, ";", k + 1));
+          String result = str.substring(ordIndexOf(str, ";", k) + 1, ordIndexOf(str, ";", k + 1));
           numbersString.add(result);
         }
         String result = str.substring(str.lastIndexOf(";")+1);
@@ -54,7 +54,7 @@ public class Lottery {
     TreeMap<String,Integer> sorted_map = new TreeMap<>(bvc);
     sorted_map.putAll(map);
     for (int i = 1; i < 4 ; i++) {
-      sorted_map.g(i)
+      sorted_map.g(i);
     }
     return result.toString();
   }
@@ -73,7 +73,7 @@ public class Lottery {
     }
   }
 
-  public static int ordinalIndexOf(String str, String substr, int n) {
+  private static int ordIndexOf(String str, String substr, int n) {
     int pos = str.indexOf(substr);
     while (--n > 0 && pos != -1)
       pos = str.indexOf(substr, pos + 1);

@@ -9,7 +9,7 @@ public class Triangles {
     int y = 610;
     tri(graphics, x, y, 1);
     revtrihalf(graphics, x, y, 1);
-    fract(graphics,x,y,1,2);
+    fract(graphics,x,y,1,5);
   }
 
   private static void tri(Graphics g, int x, int y, int s) {
@@ -27,7 +27,6 @@ public class Triangles {
     if (n == 0) {
       return;
     } else {
-      tri(g, x+225/s, y-130/s, s*4);
       revtrihalf(g, x, y, s);
       int x1 = x + 300/s;
       int x2 = x + 150/s;

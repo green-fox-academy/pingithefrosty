@@ -11,7 +11,7 @@ public class RecursionSquare {
     fract(graphics,450,450,450,5);
   }
 
-  private static void fourSquareDrawer(Graphics g, int x, int y, int s) {
+  private static void nineSquareDrawer(Graphics g, int x, int y, int s) {
     g.drawLine(x-s/3,y-s,x-s/3,y+s);
     g.drawLine(x+s/3,y-s,x+s/3,y+s);
     g.drawLine(x-s,y-s/3,x+s,y-s/3);
@@ -22,7 +22,7 @@ public class RecursionSquare {
     if (n == 0) {
       return;
     } else {
-      fourSquareDrawer(g,x,y,s);
+      nineSquareDrawer(g,x,y,s);
       int x1 = x + 2*s/3;
       int y1 = y + 2*s/3;
       int x2 = x - 2*s/3;

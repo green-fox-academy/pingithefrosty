@@ -3,36 +3,39 @@ import java.awt.*;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
-public class RecursiveHexagon {
+public class SquareGrid {
   public static void mainDraw(Graphics graphics) {
     graphics.setColor(Color.black);
     int x = 310;
     int y = 310;
-    hex(graphics, x, y, 1);
-    fract(graphics, x, y, 1, 5);
+    square(graphics, x, y, 2);
+    fract(graphics, x, y, 2, 4);
   }
 
-  private static void hex(Graphics g, int x, int y, int s) {
-    g.drawLine(x + 150 / s, y - 260 / s, x + 300 / s, y);
-    g.drawLine(x + 150 / s, y - 260 / s, x - 150 / s, y - 260 / s);
-    g.drawLine(x - 150 / s, y - 260 / s, x - 300 / s, y);
-    g.drawLine(x + 150 / s, y + 260 / s, x + 300 / s, y);
-    g.drawLine(x + 150 / s, y + 260 / s, x - 150 / s, y + 260 / s);
-    g.drawLine(x - 150 / s, y + 260 / s, x - 300 / s, y);
+  private static void square(Graphics g, int x, int y, int s, int t) {
+    Graphics2D g2 = (Graphics2D) g;
+    BasicStroke strokeThick = new BasicStroke(t);
+    g2.setStroke(strokeThick);
+    g.drawLine(x - 300 / s, y - 300 / s, x + 300 / s, y - 300 / s);
+    g.drawLine(x - 300 / s, y + 300 / s, x - 300 / s, y - 300 / s);
+    g.drawLine(x + 300 / s, y + 300 / s, x - 300 / s, y + 300 / s);
+    g.drawLine(x + 300 / s, y - 300 / s, x + 300 / s, y + 300 / s);
   }
 
   private static void fract(Graphics g, int x, int y, int s, int n) {
     if (n == 0) {
       return;
     } else {
-      hex(g, x, y, s);
-      int x1 = x + 150/s;
-      int x2 = x - 75/s;
-      int y1 = y + 130/s;
-      int y2 = y - 130/s;
-      fract(g, x2, y1, s * 2, n - 1);
+      square(g, x, y, s);
+      int x1 = x - 300 / s;
+      int x2 = x + 300 / s;
+      int y1 = y - 300 / s;
+      int y2 = y + 300 / s;
+
+      fract(g, x1, y1, s * 2, n - 1);
       fract(g, x2, y2, s * 2, n - 1);
-      fract(g, x1, y, s * 2, n - 1);
+      fract(g, x1, y2, s * 2, n - 1);
+      fract(g, x2, y1, s * 2, n - 1);
     }
   }
 

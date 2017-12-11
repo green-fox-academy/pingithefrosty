@@ -27,14 +27,22 @@ public class Triangles {
     if (n == 0) {
       return;
     } else {
-      tri(g, x+225/s, y-130/s, s*4);
-      revtrihalf(g, x, y, s);
       int x1 = x + 300/s;
       int x2 = x + 150/s;
       int y1 = y - 260/s;
-      fract(g, x, y, s * 2, n - 1);
-      fract(g, x1, y, s * 2, n - 1);
-      fract(g, x2, y1, s * 2, n - 1);
+      int x3 = x + 225/s;
+      int y2 = y - 130/s;
+      int x4 = x + 75/s;
+      tri(g, x3, y2, s*4);
+      revtrihalf(g, x, y, s*2);
+      revtrihalf(g, x1, y, s*2);
+      revtrihalf(g, x2, y1, s*2);
+      fract(g, x, y, s*2, n - 1);
+      fract(g, x1, y, s*2, n - 1);
+      fract(g, x2, y1, s*2, n - 1);
+      fract(g, x3, y2, s*2, n - 1);
+      fract(g, x4, y2, s*2, n - 1);
+      fract(g, x2, y, s*2, n - 1);
     }
   }
 

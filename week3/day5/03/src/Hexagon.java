@@ -9,7 +9,7 @@ public class Hexagon {
     int x = 310;
     int y = 310;
     hex(graphics, x, y, 1);
-    fract(graphics, x, y, 2, 7);
+    fract(graphics, x, y, 1, 5);
   }
 
   private static void hex(Graphics g, int x, int y, int s) {
@@ -26,13 +26,23 @@ public class Hexagon {
       return;
     } else {
       hex(g, x, y, s);
-      int y1 = y - 780/(2*s);
-      fract(g, x, y1, s * 3, n - 1);
+      int x1 = x + 200/s;
+      int x2 = x - 200/s;
+      int x3 = x + 100/s;
+      int x4 = x - 100/s;
+      int y1 = y + 173/s;
+      int y2 = y - 173/s;
+      fract(g, x1, y, s * 3, n - 1);
+      fract(g, x2, y, s * 3, n - 1);
+      fract(g, x3, y1, s * 3, n - 1);
+      fract(g, x4, y1, s * 3, n - 1);
+      fract(g, x3, y2, s * 3, n - 1);
+      fract(g, x4, y2, s * 3, n - 1);
     }
   }
 
 
-  static int WIDTH = 900;
+  static int WIDTH = 650;
   static int HEIGHT = 900;
   public static void main(String[] args) {
     JFrame jFrame = new JFrame("Drawing");

@@ -9,7 +9,7 @@ public class SierpinskyCarpet {
     int x = 300;
     int y = 300;
     fillRect(graphics, x, y, 300);
-    fract(graphics, x, y, 1, 5);
+    fract(graphics, x, y, 1, 6);
   }
 
   private static void fillRect(Graphics g, int x, int y, int s) {
@@ -21,8 +21,20 @@ public class SierpinskyCarpet {
       return;
     } else {
       fillRect(g, x, y, s);
-      int x1 =
-      fract(g, x, y, s * 2, n - 1);
+      int x1 = x - 200 / s;
+      int y1 = y - 200 / s;
+      int x2 = x + 100 / s;
+      int y2 = y + 100 / s;
+      int x3 = x + 400 / s;
+      int y3 = y + 400 / s;
+      fract(g, x1, y1, s * 3, n - 1);
+      fract(g, x1, y2, s * 3, n - 1);
+      fract(g, x2, y1, s * 3, n - 1);
+      fract(g, x1, y3, s * 3, n - 1);
+      fract(g, x2, y3, s * 3, n - 1);
+      fract(g, x3, y3, s * 3, n - 1);
+      fract(g, x3, y2, s * 3, n - 1);
+      fract(g, x3, y1, s * 3, n - 1);
     }
   }
 

@@ -9,7 +9,7 @@ public class SierpinskyCarpet {
     int x = 300;
     int y = 300;
     fillRect(graphics, x, y, 300);
-    fract(graphics, x, y, 1, 6);
+    fract(graphics, x, y, 1, 9);
   }
 
   private static void fillRect(Graphics g, int x, int y, int s) {

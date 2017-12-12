@@ -14,12 +14,12 @@ public class Student extends Person {
   }
 
   public void introduce(){
-    System.out.println("Hi, I'm " + getName() + " , a " + getAge() + " year old " + getGender() + "from "
+    System.out.println("Hi, I'm " + getName() + ", a " + getAge() + " year old " + getGender() + "from "
         + previousOrganization + " who skipped " + skippedDays + " days from the course already.");
   }
 
-  public void getgoal(){
-    System.out.println("Be a junior software developer.");
+  public void getGoal(){
+    System.out.println("My goal is: Be a junior software developer.");
   }
 
   public void skipDays(int numberOfDays){

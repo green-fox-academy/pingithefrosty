@@ -1,19 +1,19 @@
 import org.junit.Test;
-import java.util.HashMap;
 import static org.junit.Assert.assertEquals;
 
 public class FibonacciTest {
   Fibonacci fibonacci = new Fibonacci();
-  int testNumber = 5;
 
   @Test
-  public void fibonacci() throws Exception {
-    HashMap<Character, Integer> testMap = new HashMap<Character, Integer>() {{
-      put('a', 2);
-      put('b', 1);
-      put('c', 1);
-      put('d', 3);
-    }};
-    assertEquals(testMap, countLetters.countLetters(string1));
+  public void fibonacciFive() throws Exception {
+    int five = 5;
+    assertEquals(5,fibonacci.fibonacci(five));
   }
+
+  @Test
+  public void fibonacciTen() throws Exception {
+    int ten = 10;
+    assertEquals(55,fibonacci.fibonacci(ten));
+  }
+
 }

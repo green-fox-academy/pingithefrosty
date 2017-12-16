@@ -16,10 +16,10 @@ public class Extension {
   }
 
   int median(List<Integer> pool) {
-    if (pool.size() % 2 != 0)
-      return pool.get((pool.size() - 1) / 2);
-    else {
-      return pool.get((pool.size() / 2) + (((pool.size() / 2) - 1) / 2));
+    if (pool.size() % 2 == 0) {
+      return (pool.get(pool.size() / 2) + pool.get(pool.size() / 2 - 1)) / 2;
+    } else {
+      return pool.get((pool.size()-1)/2);
     }
   }
 
@@ -33,7 +33,8 @@ public class Extension {
     for (int i = 0; i < length; i++) {
       char c = teve.charAt(i);
       if (isVowel(c)) {
-        teve = String.join(c + "v" + c, teve.split(""+c));
+        teve = String.join(c + "v" + c, teve.substring(0,i), teve
+            .substring(i+1));
         i+=2;
         length+=2;
       }

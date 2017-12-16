@@ -8,30 +8,32 @@ public class Tree {
     graphics.fillRect(0,0,WIDTH,HEIGHT);
     graphics.setColor(Color.yellow);
     int x = 350;
-    int y = 650;
-    int s = 50;
-    int a = 40;
-    int n = 10;
+    int y = 500;
+    int s = 30;
+    int a = 90;
+    int a2 = 20;
+    int n = 12;
     graphics.drawLine(x,y+s,x,y);
-    tree(graphics,x,y,a,s,n);
+    tree(graphics,x,y,a,a2,s,n);
   }
 
-  private static void tree(Graphics g, int x, int y, double angle, int s, int n) {
-    double x1 = x + (Math.cos(Math.toRadians(90 - angle)) * s);
-    double y1 = y - (Math.sin(Math.toRadians(90 - angle)) * s);
-    double x2 = x - (Math.cos(Math.toRadians(90 - angle)) * s);
-    double y2 = y - (Math.sin(Math.toRadians(90 - angle)) * s);
-
+  private static void tree(Graphics g, int x, int y, double a, int a2, int s, int n) {
+    double x1 = x + (Math.cos(Math.toRadians(a-a2)) * s);
+    double y1 = y - (Math.sin(Math.toRadians(a-a2)) * s);
+    double x2 = x + (Math.cos(Math.toRadians(a+a2)) * s);
+    double y2 = y - (Math.sin(Math.toRadians(a+a2)) * s);
+    double x3 = x + (Math.cos(Math.toRadians(a)) * s);
+    double y3 = y - (Math.sin(Math.toRadians(a)) * s);
     if (n == 0) {
       return;
     } else
-    g.drawLine(x,y,x,y-s);
+    g.drawLine(x,y,(int)x3,(int)y3);
     g.drawLine(x,y,(int)x1,(int)y1);
     g.drawLine(x,y,(int)x2,(int)y2);
 
-    tree(g,(int)x1,(int)y1,angle,s,n-1);
-    tree(g,x,y-s,angle,s,n-1);
-    tree(g,(int)x2,(int)y2,angle,s,n-1);
+    tree(g,(int)x1,(int)y1,a-a2,a2,s,n-1);
+    tree(g,(int)x3,(int)y3,a,a2,s,n-1);
+    tree(g,(int)x2,(int)y2,a+a2,a2,s,n-1);
   }
 
   static int WIDTH = 700;

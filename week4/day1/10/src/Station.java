@@ -1,14 +1,21 @@
 public class Station {
-  int gasAmount;
-  int remainingAmount;
+  private int stationGas;
 
   public Station (){
-    this.gasAmount = 1000;
+    this.stationGas = 1000;
+  }
+
+  public int getStationGas() {
+    return stationGas;
+  }
+
+  public void setStationGas (int stationGas) {
+    this.stationGas = stationGas;
   }
 
   public void refill(Car car){
-    this.gasAmount = gasAmount - car.capacity;
-    car.gasAmout += gasAmount;
+    this.stationGas = stationGas - (car.getCapacity()-car.getCarGas());
+    car.setCarGas(car.getCapacity());
   }
 }
 /*

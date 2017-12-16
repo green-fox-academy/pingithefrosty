@@ -21,11 +21,5 @@ public class Tree extends Plant {
     this.absorb = absorb;
   }
 
-  public void checkWater() {
-    if (getWaterLevel() < 10){
-      setNeedsWater(true);
-    } else {
-      setNeedsWater(false);
-    }
-  }
+
 }

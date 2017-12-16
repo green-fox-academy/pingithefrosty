@@ -49,4 +49,11 @@ public class Plant {
   public void setNeedsWater(Boolean needsWater) {
     this.needsWater = needsWater;
   }
+  public void checkWater() {
+    if (getWaterLevel() < 10){
+      setNeedsWater(true);
+    } else {
+      setNeedsWater(false);
+    }
+  }
 }

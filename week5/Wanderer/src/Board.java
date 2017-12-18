@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.util.ArrayList;
 import java.util.List;
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -9,10 +8,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-
 public class Board extends JComponent implements KeyListener {
   int testBoxX;
   int testBoxY;
+  static Hero hero;
 
   public Board() {
     testBoxX = 0;
@@ -38,20 +37,20 @@ public class Board extends JComponent implements KeyListener {
     graphics.fillRect(testBoxX, testBoxY, 1000, 1000);
     for (int i = 0; i < 10; i++) {
       for (int j = 0; j < 10; j++) {
-        if (maze().get(j).charAt(i) == '1') {
-          PositionedImage image = new PositionedImage("floor.png", i*100, j*100, true);
+        if (maze().get(j).charAt(i) == '0') {
+          PosIm image = new PosIm ("floor", i*100, j*100, true);
           image.draw(graphics);
         } else {
-          PositionedImage image = new PositionedImage("wall.png", i*100, j*100, false);
+          PosIm image = new PosIm ("wall", i*100, j*100, false);
           image.draw(graphics);
         }
       }
     }
+    hero.draw(graphics);
   }
 
 
   public static void main(String[] args) {
-    // Here is how you set up a new window and adding our board to it
     JFrame frame = new JFrame("RPG Game");
     Board board = new Board();
     frame.add(board);
@@ -64,6 +63,7 @@ public class Board extends JComponent implements KeyListener {
     frame.addKeyListener(board);
     // Notice (at the top) that we can only do this
     // because this Board class (the type of the board object) is also a KeyListener
+    hero = new Hero();
   }
 
   // To be a KeyListener the class needs to have these 3 methods in it
@@ -82,9 +82,13 @@ public class Board extends JComponent implements KeyListener {
   public void keyReleased(KeyEvent e) {
     // When the up or down keys hit, we change the position of our box
     if (e.getKeyCode() == KeyEvent.VK_UP) {
-      testBoxY -= 100;
+      hero.move(Hero.Directions.UP);
     } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-      testBoxY += 100;
+      hero.move(Hero.Directions.DOWN);
+    } else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
+      hero.move(Hero.Directions.LEFT);
+    } else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
+      hero.move(Hero.Directions.RIGHT);
     }
     // and redraw to have a new picture with the new coordinates
     repaint();

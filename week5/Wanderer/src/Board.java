@@ -7,25 +7,41 @@ public class Board extends JComponent implements KeyListener {
   int testBoxX;
   int testBoxY;
   static Hero hero;
+  static Map map;
 
 
   public Board() {
     testBoxX = 0;
     testBoxY = 0;
-    setPreferredSize(new Dimension(1000, 1000));
+    setPreferredSize(new Dimension(720, 720));
     setVisible(true);
   }
+
+
 
   public static void main(String[] args) {
     JFrame frame = new JFrame("RPG Game");
     Board board = new Board();
+    map = new Map();
+    hero = new Hero();
     frame.add(board);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setVisible(true);
     frame.pack();
     frame.addKeyListener(board);
-    map = new Map();
-    hero = new Hero();
+
+  }
+
+  @Override
+  public void paint(Graphics g) {
+    super.paint(g);
+    g.fillRect(0, 0, 720, 720);
+    for (int i = 0; i < 10; i++) {
+      for (int j = 0; j < 10; j++) {
+        g.drawImage(map.getTile(i, j).getTexture(), i * 72, j * 72, null);
+      }
+    }
+    hero.draw(g);
   }
 
   @Override
@@ -39,13 +55,13 @@ public class Board extends JComponent implements KeyListener {
   @Override
   public void keyReleased(KeyEvent e) {
     if (e.getKeyCode() == KeyEvent.VK_UP) {
-      hero.move(Hero.Directions.UP);
+      hero.move(map,Hero.Directions.UP);
     } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-      hero.move(Hero.Directions.DOWN);
+      hero.move(map,Hero.Directions.DOWN);
     } else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
-      hero.move(Hero.Directions.LEFT);
+      hero.move(map,Hero.Directions.LEFT);
     } else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
-      hero.move(Hero.Directions.RIGHT);
+      hero.move(map,Hero.Directions.RIGHT);
     }
     repaint();
   }

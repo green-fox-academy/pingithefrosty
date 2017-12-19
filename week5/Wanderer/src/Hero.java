@@ -28,19 +28,16 @@ public class Hero extends Character {
   }
 
   public void draw (Graphics graphics) {
-    if (image != null) {
-      Image scaledImage = image.getScaledInstance(100, 100, Image.SCALE_DEFAULT);
-      graphics.drawImage(scaledImage, x, y, null);
-    }
+    graphics.drawImage(image, x, y, null);
   }
 
-  public void move(Directions dir) {
+  public void move(Map map, Directions dir) {
     int newX = x;
     int newY = y;
 
     switch (dir) {
       case UP:
-        newY = y - 100;
+        newY = y - 72;
         try {
           setImage(ImageIO.read(new File("hero-up.png")));
         } catch (IOException e) {
@@ -48,7 +45,7 @@ public class Hero extends Character {
         }
         break;
       case DOWN:
-        newY = y + 100;
+        newY = y + 72;
         try {
           setImage(ImageIO.read(new File("hero-down.png")));
         } catch (IOException e) {
@@ -56,7 +53,7 @@ public class Hero extends Character {
         }
         break;
       case LEFT:
-        newX = x - 100;
+        newX = x - 72;
         try {
           setImage(ImageIO.read(new File("hero-left.png")));
         } catch (IOException e) {
@@ -64,7 +61,7 @@ public class Hero extends Character {
         }
         break;
       case RIGHT:
-        newX = x + 100;
+        newX = x + 72;
         try {
           setImage(ImageIO.read(new File("hero-right.png")));
         } catch (IOException e) {
@@ -72,7 +69,7 @@ public class Hero extends Character {
         }
         break;
     }
-    if ((newX < 1000) && (newY < 1000) && (newX > -1) && (newY > -1) ) {
+    if ((newX < 720) && (newY < 720) && (newX > -1) && (newY > -1) && map.getTile(newX/72,newY/72).getFloor()) {
       x = newX;
       y = newY;
     }

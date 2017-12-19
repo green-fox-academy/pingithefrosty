@@ -8,6 +8,10 @@ public class Board extends JComponent implements KeyListener {
   int testBoxY;
   static Hero hero;
   static Map map;
+  static Monster monster;
+  static Monster monster2;
+  static Monster monster3;
+  static Boss boss;
 
 
   public Board() {
@@ -17,19 +21,20 @@ public class Board extends JComponent implements KeyListener {
     setVisible(true);
   }
 
-
-
   public static void main(String[] args) {
     JFrame frame = new JFrame("RPG Game");
     Board board = new Board();
     map = new Map();
     hero = new Hero();
+    monster = new Monster(map);
+    monster2 = new Monster(map);
+    monster3 = new Monster(map);
+    boss = new Boss(map);
     frame.add(board);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     frame.setVisible(true);
     frame.pack();
     frame.addKeyListener(board);
-
   }
 
   @Override
@@ -41,6 +46,10 @@ public class Board extends JComponent implements KeyListener {
         g.drawImage(map.getTile(i, j).getTexture(), i * 72, j * 72, null);
       }
     }
+    boss.draw(g);
+    monster.draw(g);
+    monster2.draw(g);
+    monster3.draw(g);
     hero.draw(g);
   }
 

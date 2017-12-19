@@ -1,5 +1,4 @@
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -8,8 +7,27 @@ import java.util.Objects;
 public class Tile {
   private BufferedImage texture;
   private Boolean isFloor;
+  private int x, y;
 
-  public Tile (String filename) {
+  public int getX() {
+    return x;
+  }
+
+  public void setX(int x) {
+    this.x = x;
+  }
+
+  public int getY() {
+    return y;
+  }
+
+  public void setY(int y) {
+    this.y = y;
+  }
+
+  public Tile (String filename, int x, int y) {
+    this.x = x;
+    this.y = y;
     try {
       if (Objects.equals(filename, "wall")) {
         texture = ImageIO.read(new File("wall.png"));

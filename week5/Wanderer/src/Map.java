@@ -1,5 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,17 +9,24 @@ import java.util.List;
 public class Map extends JComponent  {
   private Tile[][] map = new Tile[10][10];
   private List<String> layout;
+  private ArrayList<Tile> floorList = new ArrayList<>();
 
   public Map() {
-    layout = new ArrayList<>();
-    Tile wall = new Tile("wall");
-    Tile floor = new Tile("floor");
     for (int i = 0; i < 10; i++) {
       for (int j = 0; j < 10; j++) {
         if (maze().get(j).charAt(i) == '0') {
+          Tile floor = new Tile("floor",i,j);
           map[i][j] = floor;
         } else if (maze().get(j).charAt(i) == '1') {
+          Tile wall = new Tile("wall",i,j);
           map[i][j] = wall;
+        }
+      }
+    }
+    for (int i = 0; i < 10; i++) {
+      for (int j = 0; j < 10; j++) {
+        if (getTile(i,j).getFloor()) {
+          floorList.add(getTile(i,j));
         }
       }
     }
@@ -37,7 +43,24 @@ public class Map extends JComponent  {
   }
 
   public Tile getTile (int x, int y) {
-    //if (x < 0 || x > 10 || y < 0 || y > 10) {
       return map[x][y];
-    }
   }
+
+  public ArrayList<Tile> getFloorList() {
+    return floorList;
+  }
+/*
+  public Tile getRandomFloorTile () {
+    ArrayList<Tile> floorList = new ArrayList<>();
+    for (int i = 0; i < 10; i++) {
+      for (int j = 0; j < 10; j++) {
+        if (getTile(i,j).getFloor()) {
+          floorList.add(getTile(i,j));
+        }
+      }
+    }
+    int random = (int) (Math.random() * floorList.size());
+    return floorList.get(random);
+  }
+  */
+}

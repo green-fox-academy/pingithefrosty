@@ -25,10 +25,17 @@ public class Hero extends Character {
       } catch (IOException e) {
       e.printStackTrace();
     }
+    maxHP = 20 + 3 * rollDice();
+    HP = maxHP;
+    DP = 2 * rollDice();
+    SP = 5 + rollDice();
+    level = 1;
   }
 
-  public void draw (Graphics graphics) {
-    graphics.drawImage(image, x, y, null);
+  public void draw (Graphics g) {
+    g.drawImage(image, x, y, null);
+    g.setFont(new Font("TimesRoman", Font.PLAIN, 20));
+    g.drawString("Hero (Level " + level +") HP: " + HP + "/" + maxHP + " | DP: " + DP + " | SP: " + SP,5,750);
   }
 
   public void move(Map map, Directions dir) {

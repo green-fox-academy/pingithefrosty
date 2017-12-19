@@ -18,6 +18,16 @@ public class Monster extends Character {
     } catch (IOException e) {
       e.printStackTrace();
     }
+    maxHP = 2 * stage * rollDice();
+    HP = maxHP;
+    DP = stage/2 * rollDice();
+    SP = stage * rollDice();
+    level = 1;
+    /*
+    HP: 2 * x * d6 (+d6)
+DP: x/2 * d6 (+d6/2)
+SP: x * d6 (+x)
+     */
   }
 
   public void draw (Graphics graphics) {

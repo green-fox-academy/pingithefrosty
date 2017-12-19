@@ -18,6 +18,11 @@ public class Boss extends Character {
     } catch (IOException e) {
       e.printStackTrace();
     }
+    maxHP = 2 * stage * rollDice() + rollDice();
+    HP = maxHP;
+    DP = stage/2 * rollDice() + rollDice()/2;
+    SP = stage * rollDice() + stage;
+    level = 1;
   }
 
   public void draw (Graphics graphics) {

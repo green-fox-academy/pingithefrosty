@@ -4,15 +4,14 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class Boss extends Character {
+public class Boss extends Monster {
   int x;
   int y;
   BufferedImage image;
 
-  public Boss(Map map) {
-    int random = (int) (Math.random() * map.getFloorList().size());
-    x = map.getFloorList().get(random).getX()*72;
-    y = map.getFloorList().get(random).getY()*72;
+  public Boss(int x, int y, int stage) {
+    this.x = x;
+    this.y = y;
     try {
       image = ImageIO.read(new File("boss.png"));
     } catch (IOException e) {
@@ -20,7 +19,7 @@ public class Boss extends Character {
     }
     maxHP = 2 * stage * rollDice() + rollDice();
     HP = maxHP;
-    DP = stage/2 * rollDice() + rollDice()/2;
+    DP = stage / 2 * rollDice() + rollDice()/2;
     SP = stage * rollDice() + stage;
     level = 1;
   }

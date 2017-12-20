@@ -1,12 +1,12 @@
-import javax.swing.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class Map extends JComponent  {
+public class Map {
   private Tile[][] map = new Tile[10][10];
   private List<String> layout;
   private ArrayList<Tile> floorList = new ArrayList<>();
@@ -30,6 +30,7 @@ public class Map extends JComponent  {
         }
       }
     }
+    Collections.shuffle(floorList);
   }
 
   public List<String> maze() {
@@ -42,6 +43,14 @@ public class Map extends JComponent  {
     return layout;
   }
 
+  public Tile getRandFloor (int n) {
+    return floorList.get(n);
+  }
+
+  public Tile[][] getMap() {
+    return map;
+  }
+
   public Tile getTile (int x, int y) {
       return map[x][y];
   }
@@ -49,18 +58,4 @@ public class Map extends JComponent  {
   public ArrayList<Tile> getFloorList() {
     return floorList;
   }
-/*
-  public Tile getRandomFloorTile () {
-    ArrayList<Tile> floorList = new ArrayList<>();
-    for (int i = 0; i < 10; i++) {
-      for (int j = 0; j < 10; j++) {
-        if (getTile(i,j).getFloor()) {
-          floorList.add(getTile(i,j));
-        }
-      }
-    }
-    int random = (int) (Math.random() * floorList.size());
-    return floorList.get(random);
-  }
-  */
 }

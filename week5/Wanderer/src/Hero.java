@@ -32,6 +32,8 @@ public class Hero extends Character {
     level = 1;
   }
 
+
+
   public void draw (Graphics g) {
     g.drawImage(image, x, y, null);
     g.setFont(new Font("TimesRoman", Font.PLAIN, 20));

@@ -13,9 +13,6 @@ public class Tile {
     return x;
   }
 
-  public void setX(int x) {
-    this.x = x;
-  }
 
   public int getY() {
     return y;
@@ -23,6 +20,10 @@ public class Tile {
 
   public void setY(int y) {
     this.y = y;
+  }
+
+  public void setX(int x) {
+    this.x = x;
   }
 
   public Tile (String filename, int x, int y) {

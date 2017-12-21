@@ -74,16 +74,16 @@ public class Board extends JComponent implements KeyListener {
   public void keyReleased(KeyEvent e) {
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       hero.move(map,Hero.Directions.UP);
-      monster.move(map);
+      boss.move(map);
     } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
       hero.move(map,Hero.Directions.DOWN);
-      monster.move(map);
+      boss.move(map);
     } else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
       hero.move(map,Hero.Directions.LEFT);
-      monster.move(map);
+      boss.move(map);
     } else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
       hero.move(map,Hero.Directions.RIGHT);
-      monster.move(map);
+      boss.move(map);
 //    } else if(e.getKeyCode() == KeyEvent.VK_SPACE) {
  //     for(int i = 0; i < monsterList.size(); i ++) {
  //       if (monsterList.get(i).x == hero.x && monsterList.get(i).y == hero.y) {

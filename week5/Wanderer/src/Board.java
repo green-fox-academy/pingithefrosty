@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Board extends JComponent implements KeyListener {
+
   static int testBoxX;
   static int testBoxY;
   static Hero hero;
@@ -24,7 +25,8 @@ public class Board extends JComponent implements KeyListener {
     setVisible(true);
     map = new Map();
     hero = new Hero();
-    this.stage = 1;
+
+/*    this.stage = 1;
     monsNum = 2;
     monsterList = new ArrayList<>();
     for (int i = 0; i < monsNum; i++) {
@@ -34,7 +36,7 @@ public class Board extends JComponent implements KeyListener {
     keyMonster = new Monster(map.getRandFloor(monsNum +1).getX()*72,map.getRandFloor(monsNum +1).getY()*72,stage);
     monsterList.add(keyMonster);
     boss = new Boss(map.getRandFloor(monsNum +2).getX()*72,map.getRandFloor(monsNum +2).getY()*72,stage);
-    monsterList.add(boss);
+    monsterList.add(boss);*/
   }
 
   public static void main(String[] args) {
@@ -53,11 +55,11 @@ public class Board extends JComponent implements KeyListener {
     g.fillRect(0, 0, 720, 720);
     for (int i = 0; i < 10; i++) {
       for (int j = 0; j < 10; j++) {
-        g.drawImage(map.getTile(i, j).getTexture(), i * 72, j * 72, null);
+        g.drawImage(map.getTile(i, j).getImage(), i * 72, j * 72, null);
       }
-    }
+ /*   }
     for (int i = 0; i < monsterList.size(); i++) {
-      monsterList.get(i).draw(g);
+      monsterList.get(i).draw(g);*/
     }
     hero.draw(g);
   }
@@ -74,29 +76,24 @@ public class Board extends JComponent implements KeyListener {
   public void keyReleased(KeyEvent e) {
     if (e.getKeyCode() == KeyEvent.VK_UP) {
       hero.move(map,Hero.Directions.UP);
-      boss.move(map);
     } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
       hero.move(map,Hero.Directions.DOWN);
-      boss.move(map);
     } else if(e.getKeyCode() == KeyEvent.VK_LEFT) {
       hero.move(map,Hero.Directions.LEFT);
-      boss.move(map);
     } else if(e.getKeyCode() == KeyEvent.VK_RIGHT) {
       hero.move(map,Hero.Directions.RIGHT);
-      boss.move(map);
-//    } else if(e.getKeyCode() == KeyEvent.VK_SPACE) {
- //     for(int i = 0; i < monsterList.size(); i ++) {
- //       if (monsterList.get(i).x == hero.x && monsterList.get(i).y == hero.y) {
-   //       hero.attack(monsterList.get(i));
-     //     if(monsterList.get(i).isDead()){
-       //     monsterList.remove(i);
-         // } else {
-           // monsterList.get(i).attack(hero);
-     //     }
-  //      }
- //     }
-    }
-
+    } /*else if(e.getKeyCode() == KeyEvent.VK_SPACE) {
+      for(int i = 0; i < monsterList.size(); i ++) {
+        if (monsterList.get(i).x == hero.x && monsterList.get(i).y == hero.y) {
+          hero.attack(monsterList.get(i));
+          if(monsterList.get(i).isDead()){
+            monsterList.remove(i);
+          } else {
+            monsterList.get(i).attack(hero);
+          }
+        }
+      }
+    }*/
     repaint();
   }
 }

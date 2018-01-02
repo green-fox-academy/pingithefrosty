@@ -1,60 +1,40 @@
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-import java.util.Objects;
+import java.util.List;
 
-public class Tile {
-  private BufferedImage texture;
+public class Tile extends GameObject{
   private Boolean isFloor;
-  private int x, y;
+  private List charsOnTile;
+  private static final String wall = "wall.png";
+  private static final String floor = "floor.png";
 
-  public int getX() {
-    return x;
-  }
-
-
-  public int getY() {
-    return y;
-  }
-
-  public void setY(int y) {
-    this.y = y;
-  }
-
-  public void setX(int x) {
-    this.x = x;
-  }
-
-  public Tile (String filename, int x, int y) {
+  public Tile(int x, int y, Boolean isFloor, List charsOnTile) {
     this.x = x;
     this.y = y;
-    try {
-      if (Objects.equals(filename, "wall")) {
-        texture = ImageIO.read(new File("wall.png"));
-        isFloor = false;
-      } else if (Objects.equals(filename, "floor")){
-        texture = ImageIO.read(new File("floor.png"));
-        isFloor = true;
-      }
-    } catch (IOException e) {
-      e.printStackTrace();
+    this.isFloor = isFloor;
+    if (isFloor) {
+      setImage(floor);
+    } else {
+      setImage(wall);
     }
-  }
-
-  public BufferedImage getTexture() {
-    return texture;
-  }
-
-  public void setTexture(BufferedImage texture) {
-    this.texture = texture;
+    this.charsOnTile = charsOnTile;
   }
 
   public Boolean getFloor() {
     return isFloor;
   }
 
-  public void setFloor(Boolean floor) {
-    isFloor = floor;
+  public List getCharsOnTile() {
+    return charsOnTile;
+  }
+
+  public void setCharsOnTile(List charsOnTile) {
+    this.charsOnTile = charsOnTile;
+  }
+// tile.enter(hero)
+// tile.leave(hero)
+  public void enter(Character character) {
+
+  }
+
+  public void leave(Character character) {
   }
 }

@@ -16,18 +16,16 @@ public class Main {
     listOfFoxes.add(fox4);
     listOfFoxes.add(fox5);
 
-    List<Fox> greenFoxes = listOfFoxes.stream()
+    System.out.println("Foxes with green color");
+    listOfFoxes.stream()
         .filter(n -> n.color == "green")
-        .collect(Collectors.toList());
+        .forEach(n -> System.out.println(n.name));
+    System.out.println();
 
+    System.out.println("Foxes with green color and pallida type");
     List<Fox> greenPallidaFoxes = listOfFoxes.stream()
         .filter(n -> n.color == "green" && n.type == "pallida")
         .collect(Collectors.toList());
-
-    System.out.println("Foxes with green color");
-    System.out.println(greenFoxes);
-    System.out.println();
-    System.out.println("Foxes with green color and pallida type");
     System.out.println(greenPallidaFoxes);
   }
 }

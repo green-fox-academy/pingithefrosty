@@ -7,13 +7,25 @@
 </head>
 <body>
 <table border="1">
+    <td>id</td>
     <td>name</td>
     <td>balance (Zebras)</td>
     <td>animal type</td>
+    <td>status</td>
+    <td>affiliation</td>
     <tr th:each="accounts : ${accountList}">
+        <td th:text="${accountsStat.index}"/>
         <td th:text="${accounts.name}"/>
         <td th:text="${accounts.balance}"/>
         <td th:text="${accounts.animalType}"/>
+        <td>
+            <span th:if="${accounts.status}" th:style="'color: gold'" th:text="King" />
+            <span th:unless="${accounts.status}" />
+        </td>
+        <td th:switch="${accounts.affiliation}">
+            <span th:case="'Good One'" th:text="good"/>
+            <span th:case="'Bad Guy'" th:text="bad"/>
+        </td>
     </tr>
 </table>
 </body>

@@ -4,14 +4,34 @@ public class BankAccount {
   private String name;
   private int balance;
   private String animalType;
+  private boolean status;
+  private String affiliation;
 
   public BankAccount() {
   }
 
-  public BankAccount(String name, int balance, String animalType) {
+  public BankAccount(String name, int balance, String animalType, boolean status, String affiliation) {
     this.name = name;
     this.balance = balance;
     this.animalType = animalType;
+    this.status = status;
+    this.affiliation = affiliation;
+  }
+
+  public String getAffiliation() {
+    return affiliation;
+  }
+
+  public void setAffiliation(String affiliation) {
+    this.affiliation = affiliation;
+  }
+
+  public boolean isStatus() {
+    return status;
+  }
+
+  public void setStatus(boolean status) {
+    this.status = status;
   }
 
   public String getName() {

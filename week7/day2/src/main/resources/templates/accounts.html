@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise #</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<table border="1">
+    <td>name</td>
+    <td>balance (Zebras)</td>
+    <td>animal type</td>
+    <tr th:each="accounts : ${accountList}">
+        <td th:text="${accounts.name}"/>
+        <td th:text="${accounts.balance}"/>
+        <td th:text="${accounts.animalType}"/>
+    </tr>
+</table>
+</body>
+</html>

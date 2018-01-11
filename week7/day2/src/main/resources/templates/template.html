@@ -6,8 +6,10 @@
     <meta charset="utf-8" />
 </head>
 <body>
-    <p th:text="'name: ' + ${bankAccount.name}"/>
-    <p th:text="'balance: ' + ${bankAccount.balance}"/>
-    <p th:text="'animalType: ' + ${bankAccount.animalType}"/>
+    <p th:text="'name: ' + ${name}"/>
+    <p th:text="'balance: ' + ${#numbers.formatDecimal(balance, 2, 2, 'POINT')} + ' Zebra'"/>
+    <p th:text="'animalType: ' + ${animalType}"/>
+    <p th:utext="${test1}"/>
+    <p th:text="${test2}"/>
 </body>
 </html>

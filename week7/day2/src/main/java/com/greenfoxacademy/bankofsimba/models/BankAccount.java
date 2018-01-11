@@ -22,7 +22,7 @@ public class BankAccount {
     this.name = name;
   }
 
-  public int getBalance() {
+  public double getBalance() {
     return balance;
   }
 

@@ -1,12 +1,12 @@
-package com.greenfoxacademy.greenfoxclassapp;
+package com.greenfoxacademy.hellobeanworldapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class GreenfoxclassappApplication {
+public class HellobeanworldappApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(GreenfoxclassappApplication.class, args);
+		SpringApplication.run(HellobeanworldappApplication.class, args);
 	}
 }

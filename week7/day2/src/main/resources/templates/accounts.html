@@ -6,27 +6,56 @@
     <meta charset="utf-8" />
 </head>
 <body>
-<table border="1">
-    <td>id</td>
-    <td>name</td>
-    <td>balance (Zebras)</td>
-    <td>animal type</td>
-    <td>status</td>
-    <td>affiliation</td>
-    <tr th:each="accounts : ${accountList}">
-        <td th:text="${accountsStat.index}"/>
-        <td th:text="${accounts.name}"/>
-        <td th:text="${accounts.balance}"/>
-        <td th:text="${accounts.animalType}"/>
-        <td>
-            <span th:if="${accounts.status}" th:style="'color: gold'" th:text="King" />
-            <span th:unless="${accounts.status}" />
-        </td>
-        <td th:switch="${accounts.affiliation}">
-            <span th:case="'Good One'" th:text="good"/>
-            <span th:case="'Bad Guy'" th:text="bad"/>
-        </td>
-    </tr>
-</table>
+    <table border="1">
+        <td width="40px" align="center">id</td>
+        <td width="80px" align="center">name</td>
+        <td width="120px" align="center">balance (Zebras)</td>
+        <td width="100px" align="center">animal type</td>
+        <td width="60px" align="center">status</td>
+        <td width="80px" align="center">affiliation</td>
+        <tr th:each="accounts : ${accountList}" align="center">
+            <td th:text="${accountsStat.index}"/>
+            <td th:text="${accounts.name}"/>
+            <td th:text="${accounts.balance}"/>
+            <td th:text="${accounts.animalType}"/>
+            <td>
+                <span th:if="${accounts.status}" th:style="'color: gold'" th:text="King" />
+                <span th:unless="${accounts.status}" />
+            </td>
+            <td th:switch="${accounts.affiliation}">
+                <span th:case="'Good One'" th:text="good"/>
+                <span th:case="'Bad Guy'" th:text="bad"/>
+            </td>
+        </tr>
+    </table>
+    <form>
+        <select th:field="*{accountList}">
+            <option th:each="accounts : ${accountList}" th:value="${accounts.name}" th:text="${accounts.name}"></option>
+        </select>
+        <input class="button" th:action="@{/accounts/raise}" method="post" type="submit" value="Raise"/>
+    </form>
+    <form th:action="@{/accounts/add}" th:object="${accountList}" method="post">
+        <table border="1">
+            <tr>
+                <td><label>name:</label><input type="text"/></td>
+
+            </tr>
+            <tr>
+                <td><label>balance:</label></td>
+            </tr>
+            <tr>
+                <td><label>animalType:</label></td>
+            </tr>
+            <tr>
+                <td><label>status:</label></td>
+            </tr>
+            <tr>
+                <td><label>affiliation:</label></td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    </form>
 </body>
 </html>

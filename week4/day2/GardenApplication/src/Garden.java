@@ -39,14 +39,16 @@ public class Garden {
         nWL.add(plants.get(i));
       }
     }
+
     float actualWateredAmount = waterAmount / nWL.size();
-    for (int j = 0; j < nWL.size(); j++) {
-      if (nWL.get(j) instanceof Flower) {
-        nWL.get(j).setWaterLevel(nWL.get(j).getWaterLevel() + actualWateredAmount * 0.75);
-      } else if (nWL.get(j) instanceof Tree) {
-        nWL.get(j).setWaterLevel(nWL.get(j).getWaterLevel() + actualWateredAmount * 0.4);//how to get absorb?
+    for (Plant aNWL : nWL) {
+      if (aNWL instanceof Flower) {
+        aNWL.setWaterLevel(aNWL.getWaterLevel() + actualWateredAmount * 0.75);
+      } else if (aNWL instanceof Tree) {
+        aNWL.setWaterLevel(aNWL.getWaterLevel() + actualWateredAmount * 0.4);
       }
     }
+
     for (int k = 0; k < plants.size(); k++) {
       if (plants.get(k) instanceof Flower) {
         plants.get(k).setNeedsWater(plants.get(k).getWaterLevel() < 5);

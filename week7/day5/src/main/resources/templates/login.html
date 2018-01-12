@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Exercise</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+    <h1>Welcome to the Fox Programmer Club</h1>
+    <p>Please provide a name, so you can associate it to your pet!</p>
+    <form action="#" th:action="@{/login}" method="post" >
+        <p>Name <input type="text" name="name"/><span> </span><input class="button" method="post" type="submit" value="Go"/></p>
+    </form>
+</body>
+</html>

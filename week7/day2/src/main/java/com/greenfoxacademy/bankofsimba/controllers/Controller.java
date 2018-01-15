@@ -42,7 +42,7 @@ public class Controller {
     return "accounts";
   }
 
-  @RequestMapping(value = "/accounts/raise", method = RequestMethod.POST)
+  @RequestMapping(value = {"/accounts/{id}"}, method = RequestMethod.POST)
   public String raise(Model model, @ModelAttribute BankAccount bankAccount) {
     for (BankAccount bankAccount1 : accountList) {
       if (bankAccount1.isStatus()) {

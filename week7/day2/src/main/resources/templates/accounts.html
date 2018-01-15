@@ -28,28 +28,35 @@
             </td>
         </tr>
     </table>
+    <p></p>
     <form>
         <select th:field="*{accountList}">
             <option th:each="accounts : ${accountList}" th:value="${accounts.name}" th:text="${accounts.name}"></option>
         </select>
         <input class="button" th:action="@{/accounts/raise}" method="post" type="submit" value="Raise"/>
     </form>
+    <p></p>
     <form th:action="@{/accounts/add}" th:object="${accountList}" method="post">
         <table border="1">
             <tr>
-                <td><label>name:</label><input type="text"/></td>
+                <td><label>name:</label></td>
+                <td><input type="text"/></td>
             </tr>
             <tr>
-                <td><label>balance:</label><input type="text"/></td>
+                <td><label>balance:</label></td>
+                <td><input type="text"/></td>
             </tr>
             <tr>
-                <td><label>animalType:</label><input type="text"/></td>
+                <td><label>animalType:</label></td>
+                <td><input type="text"/></td>
             </tr>
             <tr>
-                <td><label>status:</label><input type="text"/></td>
+                <td><label>status:</label></td>
+                <td><input type="text"/></td>
             </tr>
             <tr>
-                <td><label>affiliation:</label><input type="text"/></td>
+                <td><label>affiliation:</label></td>
+                <td><input type="text"/></td>
             </tr>
             <tr>
                 <td><input type="submit" value="Submit" /></td>

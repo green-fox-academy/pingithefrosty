@@ -14,6 +14,7 @@ public class Todo {
   private String title;
   private boolean isUrgent;
   private boolean isDone;
+  private String todoType;
 
   public Todo() {
   }
@@ -56,8 +57,11 @@ public class Todo {
     isDone = done;
   }
 
-  @Override
-  public String toString() {
-    return String.format("Todo[id=%d, title = %s, is urgent? %b, is done? %b]", id, title, isUrgent, isDone);
+  public String getTodoType() {
+    return todoType;
+  }
+
+  public void setTodoType(String todoType) {
+    this.todoType = todoType;
   }
 }

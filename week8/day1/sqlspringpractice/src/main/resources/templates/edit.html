@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Barni's Todos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
+    <meta charset="utf-8" />
+</head>
+<body>
+<h1 th:text="'Edit Todo with id ' + ${todo.id}"></h1>
+<form action="#" th:action="@{/edit/} + ${todo.id}" th:object="${todo}" method="post">
+    <div>
+        <label th:field="*{id}" th:text="*{id}"></label>
+    </div>
+    <div>
+        <label for="todo_name">Name: </label>
+        <input id="todo_name" type="text" th:field="*{title}"/>
+    </div>
+
+    <div>
+        <label for="isDone">Is done?</label>
+        <input id="isDone" type="checkbox" th:field="*{isDone}"/>
+    </div>
+    <div>
+        <label for="isUrgent">Is urgent?</label>
+        <input id="isUrgent" type="checkbox" th:field="*{isUrgent}"/>
+    </div>
+    <div>
+        <select th:field="*{todoType}">
+            <option th:each="type : ${todoTypes}"
+                    th:value="${type}"
+                    th:text="${type}"
+            ></option>
+        </select>
+    </div>
+    <div>
+        <input type="submit" class="btn btn-success" value="Edit"/>
+    </div>
+</form>
+</body>
+</html>

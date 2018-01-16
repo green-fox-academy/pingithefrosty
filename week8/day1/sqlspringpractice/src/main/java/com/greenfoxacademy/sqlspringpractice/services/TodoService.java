@@ -9,10 +9,8 @@ import java.util.List;
 public interface TodoService {
 
   List<Todo> getAllTodos();
-  Todo getTodo(Integer id);
-  void create(Todo todo);
-  void setTitle(Integer id, String string);
-  void setDone(Integer id, boolean input);
-  void setUrgent(Integer id, boolean input);
-  void delete(Integer id);
+  Todo getTodoById(int id);
+  void addTodo(Todo todo);
+  void modifyTodo(Todo todo);
+  void deleteTodo(int id);
 }

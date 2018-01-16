@@ -7,8 +7,35 @@
 </head>
 <body>
 <h1>Todos for today:</h1>
-<ul th:each="todo : ${todos}">
-    <li th:text="${todo.title}"></li>
-</ul>
+<table th:border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>IS DONE</th>
+            <th>IS URGENT</th>
+            <th>TITLE</th>
+        </tr>
+    </thead>
+    <tbody th:each="todo:${todos}">
+        <tr>
+            <td th:text="${todo.id}" />
+            <td th:text="${todo.isDone}" />
+            <td th:text="${todo.isUrgent}" />
+            <td th:text="${todo.title}" />
+            <form action="#" th:action="@{/todo/}" method="post"
+                  th:object="${todos}">
+                <td>
+                    <button type="submit" name="delete" th:value="${todo.id}">Delete</button>
+                </td>
+            </form>
+            <form action="#" th:action="@{/todo/edit}" method="post"
+                  th:object="${todos}">
+                <td>
+                    <button type="submit" name="edit" th:value="${todo.id}">Edit</button>
+                </td>
+            </form>
+        </tr>
+    </tbody>
+</table>
 </body>
 </html>

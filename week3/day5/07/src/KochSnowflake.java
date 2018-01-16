@@ -11,7 +11,7 @@ public class KochSnowflake {
     int y = 178;
     int s = 600;
     int a = 0;
-    int n = 10;
+    int n = 2;
     kochLine(graphics, x, y, a, s, n);
     kochLine(graphics, x + 600, y, a + 120, s, n);
     kochLine(graphics, x + 300, y + 520, a + 240, s, n);

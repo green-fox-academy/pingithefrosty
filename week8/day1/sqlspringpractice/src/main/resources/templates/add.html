@@ -2,27 +2,48 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Barni's Todos</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <link href="/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet"/>
     <meta charset="utf-8" />
-    <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
-    <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
 </head>
-<body>
-<div class="container">
-    <div class="form-group">
+<body class="container-fluid">
+    <table class="container">
         <form action="#" th:action="@{/add}" th:object="${newTodo}" method="post">
-            <input type="hidden" th:field="*{id}"/>
-            <label for="isDone">Is done?</label>
-            <input id="isDone" type="checkbox" th:field="*{isDone}"/>
-            <label for="isUrgent">Is urgent?</label>
-            <input id="isUrgent" type="checkbox" th:field="*{isUrgent}"/>
-            <input type="text" th:field="*{title}"/>
-            <select th:field="*{todoType}">
-                <option th:each="type : ${todoTypes}" th:value="${type}" th:text="${type}"></option>
-            </select>
-            <input type="submit" class="btn btn-success" value="Add Todo"/>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>TITLE</th>
+                    <th>IS DONE</th>
+                    <th>IS URGENT</th>
+                    <th>TYPE</th>
+                    <th>ADD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="hidden" th:field="*{id}"/>
+                    </td>
+                    <td>
+                        <input type="text" th:field="*{title}"/>
+                    </td>
+                    <td>
+                        <input type="checkbox" th:field="*{isUrgent}"/>
+                    </td>
+                    <td>
+                        <input type="checkbox" th:field="*{isDone}"/>
+                    </td>
+                    <td>
+                        <select th:field="*{todoType}">
+                            <option th:each="type : ${todoTypes}" th:value="${type}" th:text="${type}"></option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="submit" class="btn btn-success" value="Add Todo"/>
+                    </td>
+                </tr>
+            </tbody>
         </form>
-    </div>
-</div>
+    </table>
 </body>
 </html>

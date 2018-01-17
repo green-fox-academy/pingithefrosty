@@ -25,6 +25,14 @@ public class Todo {
     isDone = false;
   }
 
+  public String getTodoType() {
+    return todoType;
+  }
+
+  public void setTodoType(String todoType) {
+    this.todoType = todoType;
+  }
+
   public int getId() {
     return id;
   }

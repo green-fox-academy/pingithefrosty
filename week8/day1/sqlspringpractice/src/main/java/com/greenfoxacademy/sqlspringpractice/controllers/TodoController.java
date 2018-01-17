@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -29,15 +30,23 @@ public class TodoController {
   public String showList(Model model) {
     List<Todo> todos = todoService.getAllTodos();
     model.addAttribute("todos", todos);
-    model.addAttribute("newTodo",todoFactory.getEmptyTodo());
     model.addAttribute("todoTypes", types.getTodoTypes());
     return "list";
   }
 
   @PostMapping("/add")
-  public String addTodo(@ModelAttribute Todo todo) {
+  public ModelAndView addTodo(@ModelAttribute Todo todo) {
     todoService.addTodo(todo);
-    return "redirect:";
+    return new ModelAndView("redirect:/");
+  }
+
+  @GetMapping("/add")
+  public String showAddTodo(Model model) {
+    List<Todo> todos = todoService.getAllTodos();
+    model.addAttribute("todos", todos);
+    model.addAttribute("todoTypes", types.getTodoTypes());
+    model.addAttribute("newTodo",todoFactory.getEmptyTodo());
+    return "add";
   }
 
   @PostMapping("/delete/{todoId}")

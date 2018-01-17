@@ -57,11 +57,5 @@ public class Todo {
     isDone = done;
   }
 
-  public String getTodoType() {
-    return todoType;
-  }
 
-  public void setTodoType(String todoType) {
-    this.todoType = todoType;
-  }
 }

@@ -4,50 +4,69 @@
     <title>Barni's Todos</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous"/>
     <meta charset="utf-8" />
+    <script src="webjars/jquery/1.11.1/jquery.min.js"></script>
+    <script src="webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $("#myInput").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > - 1)
+                });
+            });
+        });
+    </script>
 </head>
-<body>
-<h1>Todos for today:</h1>
-<form action="#" th:action="@{/add}" th:object="${newTodo}" method="post">
-    <input type="hidden" th:field="*{id}"/>
-    <label for="isDone">Is done?</label>
-    <input id="isDone" type="checkbox" th:field="*{isDone}"/>
-    <label for="isUrgent">Is urgent?</label>
-    <input id="isUrgent" type="checkbox" th:field="*{isUrgent}"/>
-    <input type="text" th:field="*{title}"/>
-    <select th:field="*{todoType}">
-        <option th:each="type : ${todoTypes}" th:value="${type}" th:text="${type}"></option>
-    </select>
-    <input type="submit" class="btn btn-success" value="Add Todo"/>
-</form>
-<table th:border="1">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>IS DONE</th>
-            <th>IS URGENT</th>
-            <th>TITLE</th>
-            <th>TYPE</th>
-        </tr>
-    </thead>
-    <tbody th:each="todo:${todos}" th:object="${todo}">
-        <tr>
-            <td th:text="*{id}" />
-            <td th:text="*{isDone}" />
-            <td th:text="*{isUrgent}" />
-            <td th:text="*{title}" />
-            <td th:text="*{todoType}"></td>
-            <td>
-                <form action="#" th:action="@{/edit/} + *{id}" method="get">
-                    <input class="btn btn-primary" type="submit" value="Edit"/>
-                </form>
-            </td>
-            <td>
-                <form action="#" th:action="@{/delete/} + *{id}" method="post">
-                    <input class="btn btn-danger" type="submit" value="Delete"/>
-                </form>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<body class="container-fluid">
+    <div class="container">
+        <h1>Todos for today</h1>
+    </div>
+    <div class="container form-group">
+        <input class="form-control" id="myInput" type="text" placeholder="Search.."/>
+    </div>
+
+    <div class="container">
+        <div class="table-responsive">
+            <table style="width:100%" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>IS DONE</th>
+                        <th>IS URGENT</th>
+                        <th>TITLE</th>
+                        <th>TYPE</th>
+                        <th>EDIT</th>
+                        <th>DELETE</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    <tr th:each="todo:${todos}">
+                        <td th:text="${todo.id}" />
+                        <td th:if="${todo.isDone}"><span class="glyphicon glyphicon-ok"></span></td>
+                        <td th:unless="${todo.isDone}"><span class="glyphicon glyphicon-remove"></span></td>
+                        <td th:text="${todo.isUrgent}" />
+                        <td th:text="${todo.title}" />
+                        <td th:text="${todo.todoType}" />
+                        <td>
+                            <form action="#" th:action="@{/edit/} + *{id}" method="get">
+                                <input class="btn btn-primary" type="submit" value="Edit"/>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="#" th:action="@{/delete/} + *{id}" method="post">
+                                <input class="btn btn-danger" type="submit" value="Delete"/>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <form action="#" th:action="@{/add/}" method="get">
+            <input class="btn btn-success" type="submit" value="Add Todo"/>
+        </form>
+    </div>
 </body>
 </html>

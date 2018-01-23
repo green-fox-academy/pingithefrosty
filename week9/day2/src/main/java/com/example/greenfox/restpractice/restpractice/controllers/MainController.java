@@ -2,12 +2,14 @@ package com.example.greenfox.restpractice.restpractice.controllers;
 
 import com.example.greenfox.restpractice.restpractice.models.*;
 import com.example.greenfox.restpractice.restpractice.models.Error;
+import com.example.greenfox.restpractice.restpractice.models.dountil.DoUntilFactor;
+import com.example.greenfox.restpractice.restpractice.models.dountil.DoUntilGet;
+import com.example.greenfox.restpractice.restpractice.models.dountil.DoUntilSum;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
 public class MainController {
@@ -38,6 +40,20 @@ public class MainController {
     return new ResponseEntity<>(new Append(appendable), HttpStatus.OK);
   }
 
-  
+  @PostMapping("/dountil/{what}")
+  public ResponseEntity<RestResponse> doUntil(@PathVariable(value = "what") String what,
+                                              @RequestBody DoUntilGet doUntilGet) {
+    Integer input = doUntilGet.getUntil();
+    if (what.equals("sum")) {
+      return new ResponseEntity<>(new DoUntilSum(input), HttpStatus.OK);
+    } else if (what.equals("factor")) {
+      return new ResponseEntity<>(new DoUntilFactor(input), HttpStatus.OK);
+    } else {
+      return new ResponseEntity<>(new Error("Please provide a number!"), HttpStatus.OK);
+    }
+  }
+
+ /* @PostMapping("/arrays")
+  public ResponseEntity<RestResponse> arrayHandler()*/
 }
 

@@ -2,14 +2,16 @@ package com.example.greenfox.restpractice.restpractice.controllers;
 
 import com.example.greenfox.restpractice.restpractice.models.*;
 import com.example.greenfox.restpractice.restpractice.models.Error;
+import com.example.greenfox.restpractice.restpractice.models.arrayhandler.ArrayDecider;
+import com.example.greenfox.restpractice.restpractice.models.arrayhandler.ArrayHandleDouble;
+import com.example.greenfox.restpractice.restpractice.models.arrayhandler.ArrayHandleMultiply;
+import com.example.greenfox.restpractice.restpractice.models.arrayhandler.ArrayHandleSum;
 import com.example.greenfox.restpractice.restpractice.models.dountil.DoUntilFactor;
 import com.example.greenfox.restpractice.restpractice.models.dountil.DoUntilGet;
 import com.example.greenfox.restpractice.restpractice.models.dountil.DoUntilSum;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 
 @RestController
 public class MainController {
@@ -53,7 +55,19 @@ public class MainController {
     }
   }
 
- /* @PostMapping("/arrays")
-  public ResponseEntity<RestResponse> arrayHandler()*/
+  @PostMapping("/arrays")
+  public ResponseEntity<RestResponse> arrayHandler(@RequestBody ArrayDecider arrayDecider) {
+    String what = arrayDecider.getWhat();
+    int[] numbers = arrayDecider.getNumbers();
+    if (what.equals("double")) {
+      return new ResponseEntity<>(new ArrayHandleDouble(numbers), HttpStatus.OK);
+    } else if (what.equals("multiply")) {
+      return new ResponseEntity<>(new ArrayHandleMultiply(numbers), HttpStatus.OK);
+    } else if (what.equals("sum")) {
+      return new ResponseEntity<>(new ArrayHandleSum(numbers), HttpStatus.OK);
+    } else {
+      return new ResponseEntity<>(new Error("Please provide what to do with the numbers!"), HttpStatus.BAD_REQUEST);
+    }
+  }
 }
 

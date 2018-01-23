@@ -69,5 +69,10 @@ public class MainController {
       return new ResponseEntity<>(new Error("Please provide what to do with the numbers!"), HttpStatus.BAD_REQUEST);
     }
   }
+
+  @GetMapping("/log")
+  public ResponseEntity<RestResponse> logger() {
+    return null;
+  }
 }
 

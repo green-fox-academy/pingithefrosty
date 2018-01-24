@@ -79,7 +79,7 @@ public class RestpracticeApplicationTest {
 
   @Test
   public void arrayHandlerTest() throws Exception {
-    //int[] resultIntArray = {1, 2, 5, 10};
+    //int[] resultIntArray = {2, 4, 10, 20};
     mockMvc.perform(
         post("/arrays")
             .contentType("application/json;charset=UTF-8")

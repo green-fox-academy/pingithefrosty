@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Green Fox Fashion Web Store</title>
+</head>
+<body>
+<h1>Green Fox Fashion Web Store</h1>
+<form th:action="@{/warehouse/summary}" th:object="${newClothing}" method="post">
+    <select th:field="${newClothing.name}">
+        <option value="" th:each="name : ${clothingNames}" th:value="${name}" th:text="${name}"></option>
+    </select>
+    <select th:field="${newClothing.size}">
+        <option value="" th:each="size : ${clothingSizes}" th:value="${size}" th:text="${size}"></option>
+    </select>
+    <input type="text" name="quantity" th:field="*{quantity}"/>
+    <input type="submit" value="GET TOTAL"/>
+</form>
+
+<div th:if="${clothing != null}">
+    <table>
+        <tr>
+            <th>Item name</th>
+            <th>Manufacturer</th>
+            <th>Category</th>
+            <th>Size</th>
+            <th>Unit price</th>
+        </tr>
+        <tbody>
+        <tr th:each="cloth : ${clothing}">
+            <td th:text="${cloth.name}"></td>
+            <td th:text="${cloth.manufacturer}" ></td>
+            <td th:text="${cloth.category}"></td>
+            <td th:text="${cloth.size}"></td>
+            <td th:text="${cloth.price}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

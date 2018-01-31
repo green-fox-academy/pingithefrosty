@@ -80,7 +80,6 @@ public class MainController {
   public ResponseEntity<RestResponse> append(@PathVariable(value = "appendable") String appendable) {
     Log log = new Log("/appends/{appendable}", "appendable=" + appendable);
     logService.save(log);
-
     return new ResponseEntity<>(new Append(appendable), HttpStatus.OK);
   }
 
@@ -93,7 +92,7 @@ public class MainController {
     } else if (what.equals("factor")) {
       return new ResponseEntity<>(new DoUntilFactor(input), HttpStatus.OK);
     } else {
-      return new ResponseEntity<>(new Error("Please provide a number!"), HttpStatus.OK);
+      return new ResponseEntity<>(new Error("Please provide a number!"), HttpStatus.BAD_REQUEST);
     }
   }
 
@@ -101,11 +100,11 @@ public class MainController {
   public ResponseEntity<RestResponse> arrayHandler(@RequestBody ArrayDecider arrayDecider) {
     String what = arrayDecider.getWhat();
     int[] numbers = arrayDecider.getNumbers();
-    if (what.equals("double")) {
+    if ("double".equals(what)) {
       return new ResponseEntity<>(new ArrayHandleDouble(numbers), HttpStatus.OK);
-    } else if (what.equals("multiply")) {
+    } else if ("multiply".equals(what)) {
       return new ResponseEntity<>(new ArrayHandleMultiply(numbers), HttpStatus.OK);
-    } else if (what.equals("sum")) {
+    } else if ("sum".equals(what)) {
       return new ResponseEntity<>(new ArrayHandleSum(numbers), HttpStatus.OK);
     } else {
       return new ResponseEntity<>(new Error("Please provide what to do with the numbers!"), HttpStatus.BAD_REQUEST);

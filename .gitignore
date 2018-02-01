@@ -2,3 +2,7 @@
 out
 *.iml
 *.xml
+.jar
+.properties
+.bat
+.gradle

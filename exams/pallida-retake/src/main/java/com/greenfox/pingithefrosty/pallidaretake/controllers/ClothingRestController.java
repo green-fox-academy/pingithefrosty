@@ -5,6 +5,7 @@ import com.greenfox.pingithefrosty.pallidaretake.services.ClothingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,11 @@ public class ClothingRestController {
 
   @Autowired
   ClothingService clothingService;
+
+  @ExceptionHandler(Exception.class)
+  public ResponseEntity<String> exceptionHandling() {
+    return ResponseEntity.badRequest().body("Error");
+  }
 
   @GetMapping("/warehouse/query")
   public Object showResultsWithJSON(@RequestParam(value = "price", required = false) String price,

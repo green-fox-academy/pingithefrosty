@@ -11,7 +11,7 @@
         <h1 th:text="'Edit Todo with id ' + ${todo.id}"></h1>
     </div>
     <table class="container">
-        <form action="#" th:action="@{/edit/} + ${todo.id}" th:object="${todo}" method="post">
+        <form action="#" th:action="@{/list/edit/} + ${todo.id}" th:object="${todo}" method="post">
             <thead>
                 <tr>
                     <th>ID</th>

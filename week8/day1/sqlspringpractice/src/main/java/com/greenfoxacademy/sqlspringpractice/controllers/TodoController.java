@@ -3,7 +3,6 @@ package com.greenfoxacademy.sqlspringpractice.controllers;
 import com.greenfoxacademy.sqlspringpractice.collections.Types;
 import com.greenfoxacademy.sqlspringpractice.factories.TodoFactory;
 import com.greenfoxacademy.sqlspringpractice.models.Todo;
-import com.greenfoxacademy.sqlspringpractice.repositories.TodoRepository;
 import com.greenfoxacademy.sqlspringpractice.services.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +25,7 @@ public class TodoController {
   @Autowired
   Types types;
 
-  @GetMapping("")
+  @GetMapping("/list")
   public String showList(Model model) {
     List<Todo> todos = todoService.getAllTodos();
     model.addAttribute("todos", todos);
@@ -34,13 +33,13 @@ public class TodoController {
     return "list";
   }
 
-  @PostMapping("/add")
+  @PostMapping("/list/add")
   public ModelAndView addTodo(@ModelAttribute Todo todo) {
     todoService.addTodo(todo);
-    return new ModelAndView("redirect:/");
+    return new ModelAndView("redirect:/list");
   }
 
-  @GetMapping("/add")
+  @GetMapping("/list/add")
   public String showAddTodo(Model model) {
     List<Todo> todos = todoService.getAllTodos();
     model.addAttribute("todos", todos);
@@ -49,13 +48,13 @@ public class TodoController {
     return "add";
   }
 
-  @PostMapping("/delete/{todoId}")
+  @PostMapping("/list/delete/{todoId}")
   public String deleteTodo (@PathVariable int todoId) {
     todoService.deleteTodo(todoId);
-    return "redirect:/";
+    return "redirect:/list";
   }
 
-  @GetMapping("/edit/{todoId}")
+  @GetMapping("/list/edit/{todoId}")
   public String showEdit(@PathVariable int todoId, Model model) {
     Todo todo = todoService.getTodoById(todoId);
     model.addAttribute("todo", todo);
@@ -63,10 +62,10 @@ public class TodoController {
     return "edit";
   }
 
-  @PostMapping("/edit/{todoId}")
+  @PostMapping("/list/edit/{todoId}")
   public String editTodo(@PathVariable int todoId, @ModelAttribute Todo todo) {
     todo.setId(todoId);
     todoService.modifyTodo(todo);
-    return "redirect:/";
+    return "redirect:/list";
   }
 }

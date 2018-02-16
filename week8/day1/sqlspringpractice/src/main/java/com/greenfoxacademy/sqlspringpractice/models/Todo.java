@@ -1,11 +1,9 @@
 package com.greenfoxacademy.sqlspringpractice.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table
 public class Todo {
 
   @GeneratedValue(strategy = GenerationType.AUTO)
@@ -15,6 +13,9 @@ public class Todo {
   private boolean isUrgent;
   private boolean isDone;
   private String todoType;
+  @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "name")
+  private Assignee assignee;
 
   public Todo() {
   }
@@ -23,6 +24,14 @@ public class Todo {
     this.title = title;
     isUrgent = false;
     isDone = false;
+  }
+
+  public Assignee getAssignee() {
+    return assignee;
+  }
+
+  public void setAssignee(Assignee assignee) {
+    this.assignee = assignee;
   }
 
   public String getTodoType() {

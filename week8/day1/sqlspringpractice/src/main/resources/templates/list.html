@@ -54,12 +54,12 @@
                         <td th:text="${todo.title}" />
                         <td th:text="${todo.todoType}" />
                         <td>
-                            <form action="#" th:action="@{/edit/} + *{todo.id}" method="get">
+                            <form action="#" th:action="@{/list/edit/} + *{todo.id}" method="get">
                                 <input class="btn btn-primary" type="submit" value="Edit"/>
                             </form>
                         </td>
                         <td>
-                            <form action="#" th:action="@{/delete/} + *{todo.id}" method="post">
+                            <form action="#" th:action="@{/list/delete/} + *{todo.id}" method="post">
                                 <input class="btn btn-danger" type="submit" value="Delete"/>
                             </form>
                         </td>
@@ -69,7 +69,7 @@
         </div>
     </div>
     <div class="container">
-        <form action="#" th:action="@{/add/}" method="get">
+        <form action="#" th:action="@{/list/add/}" method="get">
             <input class="btn btn-success" type="submit" value="Add Todo"/>
         </form>
     </div>

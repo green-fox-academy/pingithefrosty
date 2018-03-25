@@ -3,8 +3,8 @@ This repository is to support Barni's final exam at Green Fox Academy.
 # Foundation requirements
 ## Accomplishments
  -  [Contribution to the project](https://github.com/greenfox-academy/matchmaking/graphs/contributors)
-[My repo](https://github.com/pingithefrosty)  
-[Checkout project repo](https://github.com/greenfox-academy/matchmaking/)
+- [My repo](https://github.com/pingithefrosty)  
+- [Matchmaking project repo](https://github.com/greenfox-academy/matchmaking/)
 ## Skills
 The student, on their own, is able to:
  -  Use the command line:

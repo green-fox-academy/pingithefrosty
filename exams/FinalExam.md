@@ -1,5 +1,5 @@
 # FinalExam
-This repository is to support Bence's final exam at Green Fox Academy.
+This repository is to support Barni's final exam at Green Fox Academy.
 # Foundation requirements
 ## Accomplishments
  -  [Contribution to the project](https://github.com/greenfox-academy/matchmaking/graphs/contributors)

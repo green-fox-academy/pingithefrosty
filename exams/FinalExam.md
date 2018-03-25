@@ -2,7 +2,7 @@
 This repository is to support Barni's final exam at Green Fox Academy.
 # Foundation requirements
 ## Accomplishments
- -  [Contribution to the project](https://github.com/greenfox-academy/matchmaking/graphs/contributors)
+- [Contribution to the project](https://github.com/greenfox-academy/matchmaking/graphs/contributors)
 - [My repo](https://github.com/pingithefrosty)  
 - [Matchmaking project repo](https://github.com/greenfox-academy/matchmaking/)
 ## Skills

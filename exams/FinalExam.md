@@ -83,21 +83,15 @@ Hibernate: (Hibernate ORM is an object-relational mapping tool for the Java prog
 It provides a framework for mapping an object-oriented domain model to a relational database.
 Hibernate is an ORM framework - you describe how your objects are represented in your database,
 and hibernate handles the conversion)   
-[link for representing hybernate](https://www.javatpoint.com/images/hibernate/architecture.jpg)   
-[simple explanation](https://www.quora.com/What-does-Hibernate-do-in-Java-in-simple-language)
 JPA: (The Java Persistence API (JPA) is a Java application programming interface specification
 that describes the management of relational data in applications. JPA gives us CrudRepository
 extension for example.)   
-[link to represent JPA usage](http://javasampleapproach.com/wp-content/uploads/2017/08/angular-4-spring-jpa-mysql-spring-boot-architecture.png)   
-[JPA explanation for noobs](https://www.quora.com/What-is-Spring-Data-JPA-in-simple-words)
 JDBC: (Java Database Connectivity is an application programming interface for the programming
 language Java, which defines how a client may access a database. JDBC is the API for database
 access, and it works "in a relational way" - you query tables and get rows and columns back.
 Hibernate uses JDBC under the hood to fetch the data and later convert it to objects.)   
-[link for making it clear what the JDBC is](https://www.tutorialspoint.com/jdbc/images/jdbc-architecture.jpg)   
 ORM: (Object Relational Mapping; ORM allows you to use java objects as representation of a
 relational database. It maps the two concepts (object-oriented and relational))  
-[link to visually represent ORM](https://i.stack.imgur.com/seqRv.jpg)
 ## Web backend
 - domain
 - parts of the URL (protocol such as http; domain name such as www.google.com; directory such as

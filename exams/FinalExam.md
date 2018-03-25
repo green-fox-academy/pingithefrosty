@@ -12,8 +12,7 @@ The student, on their own, is able to:
      -  Moving, copying, creating, deleting files (mv, cp, rm, touch)
      -  Passing command line arguments to commands (in the appliaction)
  -  Use git:
-     -  Commit, add, push, pull [matchmaking repo](https://github.com/greenfox-
-academy/matchmaking/)
+     -  Commit, add, push, pull [matchmaking repo](https://github.com/greenfox-academy/matchmaking/)
      -  Review other's code [matchmaking repo](https://github.com/greenfox-academy/matchmaking/)
  -  Follow indentation and coding styleguides in their code (check any code)
  -  Create variables and methods on a given specification
@@ -24,16 +23,14 @@ academy/matchmaking/)
      -  Checking multiple values and counting
      -  Mapping values
  -  Use object orientation:
-     -  Create and inherit classes including fields and methods on a given specification. [garden exercise]
-(https://github.com/greenfox-academy/pingithefrosty/tree/master/week4/day2/GardenApplication/src)
+     -  Create and inherit classes including fields and methods on a given specification. [garden exercise](https://github.com/greenfox-academy/pingithefrosty/tree/master/week4/day2/GardenApplication/src)
      -  Understanding the difference between classes and objects
      -  Instantiating and using objects [todo app](https://github.com/greenfox-academy/pingithefrosty/tree/master/week8/day1/sqlspringpractice/src/main/java/com/greenfoxacademy/sqlspringpractice)
      -  Understanding "this" keyword
  -  Handle errors and exceptions
  -  Determine the output of expressions
  -  Explain their own code
- -  Write unit tests for functions and methods [link for integration test]
-(https://github.com/greenfox-academy/pingithefrosty/blob/master/week9/day2/src/test/java/com/greenfox/day2/RestpracticeApplicationTest.java)  
+ -  Write unit tests for functions and methods [link for integration test](https://github.com/greenfox-academy/pingithefrosty/blob/master/week9/day2/src/test/java/com/greenfox/day2/RestpracticeApplicationTest.java)  
  [link for unit test](https://github.com/greenfox-academy/matchmaking/blob/JAR-51-Feri/src/test/java/com/greenfoxacademy/matchmaking/services/ApprenticeServiceTest.java)
  # Backend Orientation Exam Competencies
 ## Interfaces and abstract classes
@@ -104,8 +101,7 @@ relational database. It maps the two concepts (object-oriented and relational))
 ## Web backend
 - domain
 - parts of the URL (protocol such as http; domain name such as www.google.com; directory such as
-/app/; filename and extension such as main.html) [link](http://sagargola.com/wp-
-content/uploads/2017/02/Understanding-URL-Elements-of-URL-Secure-URL.png)
+/app/; filename and extension such as main.html) [link](http://sagargola.com/wp-content/uploads/2017/02/Understanding-URL-Elements-of-URL-Secure-URL.png)
 - endpoint
 - HTTP (Hypertext Transfer Protocol)
   - Requests
@@ -148,8 +144,7 @@ The student, on their own, is able to:
      -  Resolving a simple merge conflict (resolved even more complex ones :))
      -  Creating a pull request [link to pull requests](https://github.com/greenfox-academy/matchmaking/pulls)
  -  Understand API documentation
- -  Understand token based authorization [link google token]
-(https://github.com/greenfox-academy/matchmaking/blob/development/src/main/java/com/greenfoxacademy/matchmaking/configs/SecurityConfig.java)
+ -  Understand token based authorization [link google token](https://github.com/greenfox-academy/matchmaking/blob/development/src/main/java/com/greenfoxacademy/matchmaking/configs/SecurityConfig.java)
  -  Refactor code
      -  Create meaningful names for methods, classes and variables
      -  Split bigger functions to smaller ones [fb parser project](https://github.com/pingithefrosty/fb-chat-java-parser/blob/master/src/Main.java)

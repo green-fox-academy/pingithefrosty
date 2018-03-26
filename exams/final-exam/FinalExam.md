@@ -5,6 +5,11 @@ This repository is to support Barni's final exam at Green Fox Academy.
 - [Contribution to the project](https://github.com/greenfox-academy/matchmaking/graphs/contributors)
 - [My repo](https://github.com/pingithefrosty)  
 - [Matchmaking project repo](https://github.com/greenfox-academy/matchmaking/)
+     - [Preference model](https://github.com/greenfox-academy/matchmaking/blob/development/src/main/java/com/greenfoxacademy/matchmaking/models/Preference.java)
+     - [Email service](https://github.com/greenfox-academy/matchmaking/blob/development/src/main/java/com/greenfoxacademy/matchmaking/services/EmailService.java)
+     - [Preference controller](https://github.com/greenfox-academy/matchmaking/blob/development/src/main/java/com/greenfoxacademy/matchmaking/controllers/PreferenceController.java)
+     - [Preference serviceimpl](https://github.com/greenfox-academy/matchmaking/blob/development/src/main/java/com/greenfoxacademy/matchmaking/services/PreferenceServiceDbImpl.java)
+     - [Preference template](https://github.com/greenfox-academy/matchmaking/blob/development/src/main/resources/templates/preference.html)
 ## Skills
 The student, on their own, is able to:
  -  Use the command line:
